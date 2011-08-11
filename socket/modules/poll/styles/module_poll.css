@@ -1,0 +1,177 @@
+/************************************************
+		POLL
+************************************************/
+#poll {
+	width: 326px;
+	background-color:#333;
+	padding: 5px;
+	margin-bottom: 20px;
+	}
+#poll h1 {
+	margin: 0px 0px 5px 0px;
+	text-indent: 3px;
+	color: #8dc63f;
+}
+#poll h2 {
+	margin: 0px 0px 5px 0px;
+	font-size:14px;
+	color: #fff;
+	text-align:justify;
+}
+
+#poll .box {
+	display:block;
+	width: 97%;
+	padding: 4px;
+	margin: 0px;
+	margin-top: 3px;
+	font-size: 12px;
+	font-family:Arial, Helvetica, sans-serif;
+	background-color:#222;
+
+}
+
+#poll .articleLink{
+	display:block;
+	width: 95px;
+	padding: 1px 5px 1px 5px;
+	float:right;
+	margin: 2px 3px 2px 0;
+	font-size: 11px;
+	font-family:Arial, Helvetica, sans-serif;
+	background-color: #693;
+
+}
+
+#poll .articleLink:hover{
+	background-color: #363;
+}
+
+#poll .box ul {
+	margin: 0;
+	padding: 0;
+}
+
+#poll .box .resultContainer{
+	margin-left: 3px;
+	width: 310px;
+}
+
+#poll .box li{
+	background-color:#181818;
+}
+
+#poll .box .resultBar {
+	background:url(/modules/poll/elements/poll_results_bg_tile_x.gif) repeat-x;
+	display:block;
+	height: 25px;
+	line-height: 25px;
+	margin: 2px 0 2px 0;
+}
+
+#poll .box .resultBar .text{
+	text-indent: 3px;
+	margin: 2px;
+	display:block;
+}
+
+#poll .box .detail {
+	width: 300px;
+	font-weight:bold;
+	margin-bottom: 3px;
+	margin-left: 3px;
+	padding: 2px 5px 2px 5px;
+	background-color: #111;
+}
+
+#poll .box .radio {
+	margin: 3px;
+	padding: 3px;
+	height: 20px;
+	line-height: 20px;
+	background-color:#333
+}
+
+#poll .box .radio:hover {
+	background-color:#444
+}
+
+
+#poll .box .voteButton {
+	display:block;
+	width: 100px;
+	padding: 2px;
+	margin-top: 10px;
+	background-color:#9C0;
+	border: 1px solid #690;
+}
+
+#poll .box .result {
+	padding: 3px;
+	background-color:#333
+}
+
+#poll .box .totalVotes {
+	margin-top: 5px;
+}
+
+
+/************************************************
+		RESULTS DISPLAYED IN ARTICLE
+************************************************/
+#articleResults {
+	width: 621px;
+	}
+
+#articleResults h1 {
+	border-top: #333 1px dotted;
+	border-bottom: #333 1px dotted;	
+	margin: 0;
+	
+}
+
+#articleResults .box {
+	display:block;
+	margin: 0px;
+	margin-top: 3px;
+	font-size: 12px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#articleResults .box ul {
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+
+#articleResults .box .resultBar {
+	background:url(/modules/poll/elements/poll_results_bg_tile_x.gif) repeat-x;
+	display:block;
+	height: 25px;
+	line-height: 25px;
+	margin: 2px 0 2px 0;
+}
+
+#articleResults .box .resultBar .text{
+	text-indent: 3px;
+	margin: 2px;
+	display:block;
+	color:#FFF;
+	font-weight:bold;
+}
+
+#articleResults .box .detail {
+	font-weight:bold;
+	margin-left: 3px;
+	padding: 2px 5px 2px 5px;
+}
+
+
+#articleResults .box .result {
+	font-weight:bold;
+
+}
+
+#articleResults .box .totalVotes {
+	margin-top: 5px;
+}

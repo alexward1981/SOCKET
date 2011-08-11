@@ -1,0 +1,71 @@
+SetEnv DEFAULT_PHP_VERSION 5 
+
+# The following filetypes will never open in the browser
+AddType application/octet-stream .avi
+AddType application/octet-stream .mpg
+AddType application/octet-stream .mov
+AddType application/octet-stream .pdf
+
+# Enable mod_rewrite
+Options +FollowSymlinks
+RewriteEngine on
+RewriteBase /
+
+#404 Redirect
+ErrorDocument 401 /errors.php?type=401
+ErrorDocument 403 /errors.php?type=403
+ErrorDocument 404 /errors.php?type=404
+ErrorDocument 500 /errors.php?type=500
+
+# Force WWW in url.
+RewriteCond %{HTTP_HOST} !^www\.[a-z-]+\.[a-z]{2,6} [NC]
+RewriteCond %{HTTP_HOST} ([a-z-]+\.[a-z]{2,6})$     [NC]
+RewriteRule ^/(.*)$ http://%1/$1 [R=301,L]
+
+#Redirect incorrect URL's to the correct versions
+redirect 301 ^(dfmag.me)$ http://www.digitalfusionmag.com/$
+
+# Disable hotlinking
+#RewriteCond %{HTTP_REFERER} !^$
+#RewriteCond %{HTTP_REFERER} !^http://(www\.)?digitalfusionmag\.com/ [NC]
+#RewriteCond %{REQUEST_URI} !hotlink\.(gif|png|jpg) [NC]
+#RewriteRule .*\.(gif|jpg|png)$ http://digitalfusionmag.com/elements/hotlink.jpg [NC] 
+
+# Rewrite static URL's to appear more friendly
+RewriteRule ^users.php$ /modules/users/users.php [L]
+RewriteRule ^authors.php$ /modules/users/users.php?authors=1 [L]
+RewriteRule ^rss.php$ /modules/blog/rss.php [L]
+RewriteRule ^rss-([a-zA-Z-0-9-]+).php$ /modules/users/rss.php?username=$1 [L]
+RewriteRule ^([a-zA-Z-0-9]+)-rss.php$ /modules/blog/rss-cat.php?cat=$1 [L]
+RewriteRule ^register.php$ /modules/users/register.php [L]
+RewriteRule ^login.php$ /modules/users/login.php [L] [QSA]
+RewriteRule ^logout.php$ /modules/users/logout.php [L] [QSA]
+RewriteRule ^about-us.php/?$ /aboutus.php [L]
+RewriteRule ^news.php/?$ /blog/news [L]
+
+RewriteRule ^/*users/?$ /modules/users/users.php [L]
+RewriteRule ^authors/?$ /modules/users/users.php?authors=1 [L]
+RewriteRule ^rss/?$ /modules/blog/rss.php [L]
+RewriteRule ^about/?$ /aboutus.php [L]
+RewriteRule ^login/?$ /modules/users/login.php [L]
+RewriteRule ^register/?$ /modules/users/register.php [L]
+RewriteRule ^news/?$ /blog/news [L]
+
+#Make any images stored in SOCKET appear ouside of socket
+#RewriteRule ^articleimages/+(.+$) /socket/modules/media/images/$1 [L]
+
+# Rewrite dynamic blog URL's to appear more friendly
+RewriteRule ^blog/([a-zA-Z-0-9-]+)/([a-zA-Z-0-9-]+)/?$ /modules/blog/article.php?cat=$1&article=$2 [NC] [L]
+RewriteRule ^blog/comments/+([a-zA-Z-0-9-]+)/([a-zA-Z-0-9-]+)/*$ /modules/blog/comments.php?cat=$1&article=$2 [NC] [L]
+RewriteRule ^blog/comments/+([a-zA-Z-0-9-]+)/([a-zA-Z-0-9-]+)/([0-9]+)/*$ /modules/blog/comments.php?cat=$1&article=$2&cid=$3 [NC] [L]
+RewriteRule ^blog/([a-zA-Z-0-9-]+)/*$ /modules/blog/categories.php?cat=$1 [NC] [L]
+
+#Allow Articles to be accessed through a shortURL
+RewriteRule ^s/([0-9]+)?x{1}([0-9]+)?$ /modules/blog/article.php?cat=$1&article=$2&short=1 [NC] [L]
+
+
+#Rewrite user profile url's to something more friendly
+RewriteRule ^users/([a-zA-Z0-9-_]+)/?$ /modules/users/profiles.php?username=$1 [NC] [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d 

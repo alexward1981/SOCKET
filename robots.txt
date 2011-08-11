@@ -1,0 +1,9 @@
+User-agent: *
+
+# Uncomment if live
+ Allow: /
+ Disallow: /socket/
+
+# Uncomment if DEV
+ #Disallow: /
+

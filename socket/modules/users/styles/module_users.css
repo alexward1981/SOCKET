@@ -1,0 +1,245 @@
+/* Formatting for profiles */
+
+.profileHeader {
+	position:relative;
+	display:block;
+	height: 102px;
+	width: 100%;
+	margin-bottom: 2px;
+	background-image:url(../../elements/article_header_bg_tile_x.jpg);
+	background-repeat:repeat-x;
+	background-color:#333;
+}
+
+.profileHeader a {
+	text-decoration:none;
+}
+
+.profileHeader p {
+line-height: 12px;
+padding: 0;
+margin: 0;
+}
+
+.profileHeader p strong {
+line-height: 12px;
+padding: 0;
+margin: 0;
+}
+
+.profileHeader h2{
+	font-size: 20px; /* 28px */
+	color: #8dc63f;
+	font-weight: normal;
+	margin: 0px;
+	padding: 0px;
+	padding-top: 3px;
+}
+
+.profileHeader .top_right_box {
+	float:right;
+	text-align:right;
+	margin: 6px 10px 6px 6px;
+}
+
+.profileHeader .userAvatar {
+	border: 2px solid #ffffff;
+	float: left;
+	margin: 5px 1.25em 5px 5px;
+	width: 90px;
+	height: 90px;
+	}
+
+.userWrapper .profileHeader .userAvatar {
+	border: 2px solid #ffffff;
+	float: left;
+	margin: 5px 1.25em 5px 5px;
+	width: 50px;
+	height: 50px;
+	}
+
+.userWrapper .profileHeader {
+	position:relative;
+	display:block;
+	height: 62px;
+	width: 100%;
+	margin-bottom: 2px;
+	background-image:none;
+	background-color:#444;
+}
+
+/* Forms */
+#loginForm, 
+#registerForm,
+{
+	background: #252525;
+	border: 1px solid #505050;
+	padding: 1.167em; /* 14px */
+	}
+#registerForm input.biginput{
+	width: 99%;
+	height: 25px;
+	padding: 4px;
+	font-size:18px;
+	font-weight:bold;
+	display:block;
+	border: 0px;
+}
+
+#registerForm textarea.biginput{
+	width: 99%;
+	padding: 4px;
+	margin-top: -1px;
+	font-size:16px;
+	font-weight:bold;
+	display:block;
+	border: 0px;
+}
+
+#registerForm .bigFileBox{
+	width: 99%;
+	background-color:#FFF;
+	display:block;
+	padding: 4px;
+}
+
+#registerForm input.bigFile{
+	width: 99%;
+}
+
+
+#registerForm label.normal{
+	display:inline-block;
+	height: 20px;
+	line-height: 20px;
+	min-width: 150px;
+	font-size:12px;
+	padding: 2px;
+	font-weight:bold;
+	background-color:#9C0;
+	color:#000;
+	text-indent: 3px;
+}
+
+#registerForm label.error{
+	display:inline-block;
+	height: 20px;
+	line-height: 20px;
+	min-width: 150px;
+	font-size:12px;
+	padding: 2px;
+	font-weight:bold;
+	background-color: #F00;
+	color:#000;
+	text-indent: 3px;
+}
+
+#registerForm input.regSubmit {
+	display:block;
+	width: 150px;
+	padding: 5px;
+	margin-top: 15px;
+	background-color:#9C0;
+	border: 1px solid #690;
+}
+
+/************************************************
+		LOGIN
+************************************************/
+
+#login_form label.normal {
+	display:inline-block;
+	height: 20px;
+	line-height: 20px;
+	min-width: 150px;
+	font-size:12px;
+	padding: 2px;
+	font-weight:bold;
+	background-color:#9C0;
+	color:#000;
+	text-indent: 3px;
+}
+
+#login_form label.error {
+	display:inline-block;
+	height: 20px;
+	line-height: 20px;
+	min-width: 150px;
+	font-size:12px;
+	padding: 2px;
+	font-weight:bold;
+	background-color:#F00;
+	color:#000;
+	text-indent: 3px;
+}
+
+#login_form input.box {
+	width: 99%;
+	height: 25px;
+	padding: 4px;
+	font-size:18px;
+	font-weight:bold;
+	display:block;
+	border: 0px;
+	margin-bottom: 10px;
+}
+
+#login_form input.button {
+	display:block;
+	width: 180px;
+	padding: 5px;
+	text-indent: 6px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	background-color:#9C0;
+	border: 1px solid #690;
+}
+
+.regButton {
+	display:block;
+	width: 180px;
+	padding: 5px;
+	text-indent: 6px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	background-image:url(/elements/green_bg.jpg);
+	background-repeat:repeat-x;
+	background-color: #390;
+	border: 1px solid #690;
+	color: #333;
+}
+
+.regButton:hover {
+	color:#060;
+}
+
+#lostpw {
+	display:block;
+	margin-top: 10px;
+	}
+
+.fbcButton {
+	display:block;
+	width: 350px;
+	height: 25px;
+	background-color:#3b5998;
+	border-top: 1px #36F solid;
+	border-right: 1px #36F solid;
+	border-bottom: #006 1px solid;
+	border-left: #006 1px solid;
+	line-height: 25px;
+	text-align:center;
+	color:#FFF;
+}
+
+.fbcButton a:hover {
+	color:#FFF;
+}
+
+.fbc {
+	display:block;
+	height: 25px;
+	background-color:#3b5998;
+	line-height: 25px;
+	text-align:center;
+}

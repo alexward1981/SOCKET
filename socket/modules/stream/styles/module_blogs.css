@@ -1,0 +1,460 @@
+@charset "utf-8";
+/* CSS Document */
+
+/************************************/
+/************* BLOG MOD *************/
+/************************************/
+
+/* Formatting for Articles */
+
+.articleHeader {
+	position:relative;
+	display:block;
+	height: 102px;
+	width: 100%;
+	margin-bottom: 2px;
+}
+
+.articleHeader a {
+	text-decoration:none;
+}
+
+.articleHeader h1{
+	margin-bottom: -2px;
+	padding: 0px;
+}
+
+.articleSubHeader {
+	background-color: #444;
+	border: 1px dotted #505050;
+	padding: 5px;
+	margin-top: 5px;
+}
+
+.articleSubHeader h2{
+	font-size:16px;
+	text-indent: 3px;
+	margin:0px 0px 5px 0px;
+	padding: 0px;
+}
+
+.articleHeader .userAvatar {
+	border: 2px solid #ffffff;
+	float: left;
+	margin: 5px 1.25em 5px 0px;
+	width: 90px;
+	height: 90px;
+	}
+	
+.articlePreview {
+	background: #252525;
+	border: 1px solid #505050;
+	padding: 8px;
+	margin: 4px 0px 4px 0px; /* 16px */	
+}
+
+.articleCompact {
+	background: #252525;
+	border: 1px dotted #505050;
+	padding: 8px;
+	margin: 4px 0px 0px 0px; /* 16px */	
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.fpSeperator {
+	display:block;
+	border-bottom: 1px dotted #fff;
+}
+
+.articleCompact .embiggen {
+	font-size: 14px;
+	font-weight:bold;
+}
+
+.articleCompact .embiggen_box {
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	display:block;
+	border-bottom: #CCC dotted 1px;
+	width: 100%;
+}
+
+
+.articleCompact a, 
+.articlePreview a {
+	text-decoration:none;
+}
+
+.articleInfo {
+	height: 37px;
+	line-height: 37px;
+	position:absolute;
+	bottom: 0px;
+	left: 114px;
+}
+
+.contact_buttons {
+	position:absolute;
+	top: 3px;
+	left: -3px;
+	width: 500px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.previewSummary {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		line-height: 14px;
+}
+
+.previewSummary p {
+		margin-bottom: 15px;
+}
+
+.previewuserAvatar {
+	border: 2px solid #ffffff;
+	float: right;
+	margin: 0 0 0 1.25em;
+	width: 90px;
+	height: 90px;
+	}
+	
+.articleDetail {
+	width: 97%;
+	display:block;
+	background-color: #F3F3F3;
+	padding: 10px;
+	}
+
+.articleDetail p {
+		margin-bottom: 15px;
+		line-height: 20px;
+}
+
+.articleDetail blockquote p {
+	font-style:italic;
+	padding: 5px 0px 5px 0px;
+	border-top: 1px #999 dotted;
+	border-bottom: 1px #999 dotted;	
+	background-image:url(http://cache.invasionmedia.co.uk/white_bg_tile_20.png);
+	background-repeat:repeat;
+	}
+
+.commentWrapper, .commentWrapperALT {
+	padding: 0;
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+.commentWrapper .commentBox {
+	width: 97%;
+	background-image:url(http://cache.invasionmedia.co.uk/black_bg_tile_40.png);
+	background-repeat:repeat;
+	padding: 8px 11px 8px 11px;
+	margin:0px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.commentWrapperALT .commentBox {
+	width: 97%;
+	background-image:url(http://cache.invasionmedia.co.uk/black_bg_tile_20.png);
+	background-repeat:repeat;
+	padding: 8px 11px 8px 11px;
+	margin:0px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.commentBox p {
+	padding: 0px;
+	margin: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.commentBox .embiggen {
+	font-size: 14px;
+	font-weight:bold;
+}
+
+.commentBox .embiggen_box {
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	display:block;
+	border-bottom: #CCC dotted 1px;
+	width: 100%;
+}
+
+
+.commentBox a {
+	text-decoration:none;
+}
+
+.articleComments {
+	width: 97%;
+	display:block;
+	background-color: #666;
+	padding: 10px;
+	}
+
+.articleComments a {
+	color: #8dc63f;
+	text-decoration:none;
+}
+
+.articleComments a:hover {
+	color: #FFF;
+	text-decoration:none;
+}
+
+.replyTo {
+	margin-left: 15px;
+	border-left: #E5E5E5 5px solid;
+}
+
+.commentWrapper .commentProfile {
+	width: 100%;
+	height: 50px;
+	display:block;
+	color:#000;
+	margin: 0px;
+	background-image:url(http://cache.invasionmedia.co.uk/white_bg_tile_20.png);
+	background-repeat:repeat;	
+	padding: 2px 0px 4px 3px;
+}
+
+.commentWrapperALT .commentProfile {
+	width: 100%;
+	height: 50px;
+	display:block;
+	color:#000;
+	margin: 0px;
+	background-image:url(http://cache.invasionmedia.co.uk/white_bg_tile_10.png);
+	background-repeat:repeat;	
+	padding: 2px 0px 4px 3px;
+}
+
+.commentProfile {
+	-webkit-box-shadow: 2px 2px 2px #555;
+	-moz-box-shadow: 2px 2px 2px #555;	
+	}
+
+.commentProfile .name{
+	font-size:18px;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.commentProfile .dateStamp{
+	color:#FFF;
+	font-weight:bold;
+}
+
+.commentProfile .userAvatar {
+	border: 1px solid #fff;
+	-webkit-box-shadow: 2px 2px 2px #666;
+	-moz-box-shadow: 2px 2px 2px #666;	
+	}
+
+.commentProfile img {
+	float:left;
+	margin-right: 5px;
+}
+
+.commentActions {
+	float:right;
+	margin-right: 3px;
+}
+
+.commentActions a {
+	display:block;
+	font-family:Arial, Helvetica, sans-serif;
+	margin-bottom: 3px;
+}
+
+
+.articleDetail .firstImage{
+	max-width: 100%;
+	margin: 0px 10px 0px 0px;
+	}
+
+.articleDetail p {
+		color:#000;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:12px;
+		line-height: 18px;
+		}
+.articleDetail .highlight p,
+.articleDetail h2 {
+		color: #000000;
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-size: 18px;
+		line-height: 22px;
+		margin-bottom: 15px;
+		font-weight: normal;
+		border-bottom: 1px solid #C0C0C0;
+		}
+.articleDetail .highlight p {
+	padding: 5px;
+	background: #e0e0e0;
+	}
+.articleDetail ul {
+	list-style-position:inside;
+	margin: 0px 0px 10px 20px;
+		}		
+.articleDetail li {
+		color:#000;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:12px;
+		margin: 0 0 5px 0;
+		line-height: 15px;
+		}
+
+/*.articleDetail h2 {
+		color: #000000;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size: 18px;
+		margin: 0px 0px 5px 0px;
+		padding: 0px;
+		}*/
+
+.articleDetail h3 {
+		color:#000;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:16px;
+		margin: 0px 0px 5px 0px;
+		padding: 0px;
+		}
+		
+.articleDetail h4 {
+		color:#000;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:14px;
+		font-weight:bold;
+		margin: 0px 0px 5px 0px;
+		padding: 0px;
+		}
+		
+.articleDetail a {
+		color:#000;
+		text-decoration: underline;
+		font-weight: bold;
+		}
+.articleDetail a:hover {
+		color: #606060;
+		}
+		
+.articleTabs ul {
+	list-style-type:none;
+	font-family:Arial, Helvetica, sans-serif;
+	overflow:auto;
+}
+
+.articleTabs ul li {
+	display:inline-block;
+	float:left;
+	height: 25px;
+	width: 100px;
+	margin-right: 2px;
+}
+
+.articleTabs ul li.selected {
+	display:inline-block;
+	background-color:#F3F3F3;
+	text-align: center;
+	line-height: 25px;
+	color:#333;
+	margin-bottom: 0px;
+}
+
+.articleTabs ul li.Cselected {
+	display:inline-block;
+	background-color:#666;
+	text-align: center;
+	line-height: 25px;
+	color:#ccc;
+	margin-bottom: 0px;
+}
+
+
+.articleTabs ul li a {
+	background-color:#333;
+	margin-bottom: 0px;
+	display:inline-block;
+	height: 25px;
+	text-align: center;
+	line-height: 25px;
+	width: 100px;
+	margin-right: 2px;
+	text-decoration:none;
+}
+
+.articleTabs ul li a:hover{
+	background-color: #444;
+	margin-bottom: 0px;
+	display:inline-block;
+	height: 25px;
+	text-align: center;
+	line-height: 25px;
+	width: 100px;
+	margin-right: 2px;
+}
+
+#commentForm {
+	background: #252525;
+	border: 1px solid #505050;
+	padding: 1.167em; /* 14px */
+	}
+	
+.repliesWrapper #commentForm {
+	background: #252525;
+	border: 1px solid #505050;
+	padding: 10px;
+	margin: 0px -5px 10px 15px;
+	}
+
+#commentForm textarea {
+	width: 99%;
+}
+#commentForm label {
+	font-size: 22px; /* 28px */
+	color: #8dc63f;
+	font-weight: normal;
+	margin: 0px;
+	padding: 0px;
+}
+#commentForm .submit {
+	display:block;
+	width: 150px;
+	padding: 5px;
+	margin-top: 15px;
+	background-color:#9C0;
+	border: 1px solid #690;
+	}
+#shareBox {
+	float:right;
+	display:inline;
+	width: 165px;
+}
+
+.DiggThisButton { float: right; }
+
+#sharingLinks {
+	background: #e0e0e0;
+	border: 1px solid #c9c9c9;
+	padding: 0.833em ;
+	margin: 1.667em 0 0 0; /* 20px */
+	}
+#sharingLinks li {
+	display: inline;
+	margin: 0 5px 0 5px;
+	}
+#sharingLinks a {
+	color: #000000;
+	}
+
+.addthis_toolbox { margin-top: 5px; }
+
+.shortLink { display:block; width: 97%; border-top: 1px dotted #666; border-bottom: 1px dotted #666; font-size: 14px; color: #390; margin-bottom: 15px; padding: 8px;}
+
+.shortLink input {padding: 3px;}

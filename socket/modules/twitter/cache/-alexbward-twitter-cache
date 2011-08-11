@@ -1,0 +1,116 @@
+s:7408:"<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:google="http://base.google.com/ns/1.0" xml:lang="en-US" xmlns:openSearch="http://a9.com/-/spec/opensearch/1.1/" xmlns="http://www.w3.org/2005/Atom" xmlns:twitter="http://api.twitter.com/">
+  <id>tag:search.twitter.com,2005:search/from: OR from:alexbward</id>
+  <link type="text/html" href="http://search.twitter.com/search?q=from%3A+OR+from%3Aalexbward" rel="alternate"/>
+  <link type="application/atom+xml" href="http://search.twitter.com/search.atom?q=from%3A+OR+from%3Aalexbward&amp;rpp=6" rel="self"/>
+  <title>from: OR from:alexbward - Twitter Search</title>
+  <link type="application/opensearchdescription+xml" href="http://search.twitter.com/opensearch.xml" rel="search"/>
+  <link type="application/atom+xml" href="http://search.twitter.com/search.atom?q=from%3A+OR+from%3Aalexbward&amp;rpp=6&amp;since_id=10115273778" rel="refresh"/>
+  <twitter:warning>since_id removed for pagination.</twitter:warning>
+  <updated>2010-03-07T10:26:05Z</updated>
+  <openSearch:itemsPerPage>6</openSearch:itemsPerPage>
+  <link type="application/atom+xml" href="http://search.twitter.com/search.atom?max_id=10115273778&amp;page=2&amp;q=from%3A+OR+from%3Aalexbward&amp;rpp=6" rel="next"/>
+  <entry>
+    <id>tag:search.twitter.com,2005:10115273778</id>
+    <published>2010-03-07T10:26:05Z</published>
+    <link type="text/html" href="http://twitter.com/tinkeylicious/statuses/10115273778" rel="alternate"/>
+    <title>At least we heard it from Jason and Melai themselves.. kaya pa nila ang showbiz! Then let's continue praying for and supporting them! :)</title>
+    <content type="html">At least we heard it from Jason and Melai themselves.. kaya pa nila ang showbiz! Then let&amp;apos;s continue praying for and supporting them! :)</content>
+    <updated>2010-03-07T10:26:05Z</updated>
+    <link type="image/png" href="http://a1.twimg.com/profile_images/701351110/melason_fever_normal.JPG" rel="image"/>
+    <twitter:geo>
+    </twitter:geo>
+    <twitter:source>&lt;a href=&quot;http://www.tweetdeck.com&quot; rel=&quot;nofollow&quot;&gt;TweetDeck&lt;/a&gt;</twitter:source>
+    <twitter:lang>en</twitter:lang>
+    <author>
+      <name>tinkeylicious (tinkeylicious)</name>
+      <uri>http://twitter.com/tinkeylicious</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:search.twitter.com,2005:10115273702</id>
+    <published>2010-03-07T10:26:05Z</published>
+    <link type="text/html" href="http://twitter.com/janalovespooh/statuses/10115273702" rel="alternate"/>
+    <title>from mcb180 to sexual satisfaction??? hahaha! hi 180 pips:):)</title>
+    <content type="html">from mcb180 to sexual satisfaction??? hahaha! hi 180 pips:):)</content>
+    <updated>2010-03-07T10:26:05Z</updated>
+    <link type="image/png" href="http://a3.twimg.com/profile_images/526375189/dreamy1jpg_normal.jpg" rel="image"/>
+    <twitter:geo>
+    </twitter:geo>
+    <twitter:source>&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;</twitter:source>
+    <twitter:lang>en</twitter:lang>
+    <author>
+      <name>janalovespooh (johanna bernice mali)</name>
+      <uri>http://twitter.com/janalovespooh</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:search.twitter.com,2005:10115273675</id>
+    <published>2010-03-07T10:26:05Z</published>
+    <link type="text/html" href="http://twitter.com/lloydteo/statuses/10115273675" rel="alternate"/>
+    <title>@chyister Your latest retweet is different from my case! If I step forward I will fall behind instead!</title>
+    <content type="html">&lt;a href=&quot;http://twitter.com/chyister&quot;&gt;@chyister&lt;/a&gt; Your latest retweet is different from my case! If I step forward I will fall behind instead!</content>
+    <updated>2010-03-07T10:26:05Z</updated>
+    <link type="image/png" href="http://a1.twimg.com/profile_images/337848898/doobothegreen_normal.jpg" rel="image"/>
+    <twitter:geo>
+    </twitter:geo>
+    <twitter:source>&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;</twitter:source>
+    <twitter:lang>en</twitter:lang>
+    <author>
+      <name>lloydteo (lloydteo)</name>
+      <uri>http://twitter.com/lloydteo</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:search.twitter.com,2005:10115273583</id>
+    <published>2010-03-07T10:26:05Z</published>
+    <link type="text/html" href="http://twitter.com/meichandler/statuses/10115273583" rel="alternate"/>
+    <title>I was taught from my parents with respect for everyone. But the fact that some people talk smack and you don't even know me is ridiculous.</title>
+    <content type="html">I was taught from my parents with respect for everyone. But the fact that some people talk smack and you don&amp;apos;t even know me is ridiculous.</content>
+    <updated>2010-03-07T10:26:05Z</updated>
+    <link type="image/png" href="http://a3.twimg.com/profile_images/666410491/22044_1322772918555_1507812913_843848_5788587_n_normal.jpg" rel="image"/>
+    <twitter:geo>
+    </twitter:geo>
+    <twitter:source>&lt;a href=&quot;http://www.atebits.com/&quot; rel=&quot;nofollow&quot;&gt;Tweetie&lt;/a&gt;</twitter:source>
+    <twitter:lang>en</twitter:lang>
+    <author>
+      <name>meichandler (Mei Mei Chandler)</name>
+      <uri>http://twitter.com/meichandler</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:search.twitter.com,2005:10115273459</id>
+    <published>2010-03-07T10:26:04Z</published>
+    <link type="text/html" href="http://twitter.com/flower119/statuses/10115273459" rel="alternate"/>
+    <title>Vegetable Gardening from White Flower Farm - Part 1: Vegetable Gardening from White Flower Farm - Part 1 http://bit.ly/bwykPK</title>
+    <content type="html">Vegetable Gardening from White Flower Farm - Part 1: Vegetable Gardening from White Flower Farm - Part 1 &lt;a href=&quot;http://bit.ly/bwykPK&quot;&gt;http://bit.ly/bwykPK&lt;/a&gt;</content>
+    <updated>2010-03-07T10:26:04Z</updated>
+    <link type="image/png" href="http://a3.twimg.com/profile_images/634143181/308323_normal.jpg" rel="image"/>
+    <twitter:geo>
+    </twitter:geo>
+    <twitter:source>&lt;a href=&quot;http://twitterfeed.com&quot; rel=&quot;nofollow&quot;&gt;twitterfeed&lt;/a&gt;</twitter:source>
+    <twitter:lang>en</twitter:lang>
+    <author>
+      <name>flower119 (Big Gardening Fan)</name>
+      <uri>http://twitter.com/flower119</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:search.twitter.com,2005:10115186672</id>
+    <published>2010-03-07T10:22:08Z</published>
+    <link type="text/html" href="http://twitter.com/catherinemay27/statuses/10115186672" rel="alternate"/>
+    <title>@MaggieA I can't imagine Sue from Glee in a dress. Maybe in Season 2? When is it back on our screens?</title>
+    <content type="html">&lt;a href=&quot;http://twitter.com/MaggieA&quot;&gt;@MaggieA&lt;/a&gt; I can&amp;apos;t imagine Sue from Glee in a dress. Maybe in Season 2? When is it back on our screens?</content>
+    <updated>2010-03-07T10:22:08Z</updated>
+    <link type="image/png" href="http://a1.twimg.com/profile_images/722855040/7926_191461971216_500056216_4327554_6352863_n_normal.jpg" rel="image"/>
+    <twitter:geo>
+    </twitter:geo>
+    <twitter:source>&lt;a href=&quot;http://mobile.twitter.com&quot; rel=&quot;nofollow&quot;&gt;Mobile Web&lt;/a&gt;</twitter:source>
+    <twitter:lang>en</twitter:lang>
+    <author>
+      <name>catherinemay27 (Catherine McDonald)</name>
+      <uri>http://twitter.com/catherinemay27</uri>
+    </author>
+  </entry>
+</feed>
+";
