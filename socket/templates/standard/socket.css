@@ -150,7 +150,7 @@ img { /* Remove this function if you want linked images to have a border */
 	margin-right:auto;
 	width: 985px;
 	min-height: 85%;
-	background-image:url(http://cache.invasionmedia.co.uk/white_bg_tile_30.png);
+	background-image:url(http://www.socketcms.co.uk/cdn/white_bg_tile_30.png);
 	background-repeat:repeat;	
 	border: #bbbec1 1px solid;
 }
@@ -173,7 +173,7 @@ img { /* Remove this function if you want linked images to have a border */
 	margin-bottom: 10px;
 	text-indent: 5px;
 	color:#333;
-	background-image:url(http://cache.invasionmedia.co.uk/black_bg_tile_40.png);
+	background-image:url(http://www.socketcms.co.uk/cdn/black_bg_tile_40.png);
 	background-repeat:repeat;	
 	border-bottom: #bbbec1 1px solid;
 }
@@ -204,7 +204,7 @@ img { /* Remove this function if you want linked images to have a border */
 	position:absolute;
 	left: 0px;
 	top: 0px;
-	background-image:url(http://cache.invasionmedia.co.uk/black_bg_tile_20.png);
+	background-image:url(http://www.socketcms.co.uk/cdn/black_bg_tile_20.png);
 	background-repeat:repeat;
 	width: 180px;
 	height: 100%;
@@ -224,18 +224,18 @@ img { /* Remove this function if you want linked images to have a border */
 	margin-top: 1px;
 }
 #menu_bar ul.menu li a {
-	background-image:url(http://cache.invasionmedia.co.uk/cyan_bg_tile_90.png);
+	background-image:url(http://www.socketcms.co.uk/cdn/cyan_bg_tile_90.png);
 	background-repeat:repeat;
 	font-weight: bold;
 	color:#FFF;
 	padding: 0.5em;
 }
 #menu_bar ul.menu li a:hover {
-	background-image:url(http://cache.invasionmedia.co.uk/blue_bg_tile_30.png);
+	background-image:url(http://www.socketcms.co.uk/cdn/blue_bg_tile_30.png);
 	background-repeat:repeat;
 }
 #menu_bar ul.menu li ul li a {
-	background-image:url(http://cache.invasionmedia.co.uk/cyan_bg_tile_40.png);
+	background-image:url(http://www.socketcms.co.uk/cdn/cyan_bg_tile_40.png);
 	background-repeat:repeat;
 	color: #000;
 	padding-left: 20px;
@@ -381,19 +381,19 @@ img { /* Remove this function if you want linked images to have a border */
 /* Adds striping to selected tables */
 
 .stripeMe tr td {
-	background-image:url(http://cache.invasionmedia.co.uk/cyan_bg_tile_10.png);
+	background-image:url(http://www.socketcms.co.uk/cdn/cyan_bg_tile_10.png);
 	background-repeat:repeat;
 	border: 1px dotted #39F;
 	padding: 1px;
 }
 .stripeMe tr.alt td {
-	background-image:url(http://cache.invasionmedia.co.uk/cyan_bg_tile_20.png);
+	background-image:url(http://www.socketcms.co.uk/cdn/cyan_bg_tile_20.png);
 	background-repeat:repeat;
 	border: 1px dotted #39F;
 	padding: 1px;
 }
 .stripeMe tr.over td {
-	background-image:url(http://cache.invasionmedia.co.uk/cyan_bg_tile_70.png);
+	background-image:url(http://www.socketcms.co.uk/cdn/cyan_bg_tile_70.png);
 	background-repeat:repeat;
 }
 .stripeMe tr td:hover {
@@ -409,59 +409,59 @@ img { /* Remove this function if you want linked images to have a border */
 }
 
 .stripeMe td.firstCol {
-	background-image:url(http://cache.invasionmedia.co.uk/aqua_bg_tile_60.png);	
+	background-image:url(http://www.socketcms.co.uk/cdn/aqua_bg_tile_60.png);	
 	width: 20px;
 }
 
 .stripeMe tr.alt td.firstCol {
-	background-image:url(http://cache.invasionmedia.co.uk/aqua_bg_tile_70.png);	
+	background-image:url(http://www.socketcms.co.uk/cdn/aqua_bg_tile_70.png);	
 	width: 20px;
 }
 
 .stripeMe td.buttonCol {
-	background-image:url(http://cache.invasionmedia.co.uk/aqua_bg_tile_20.png);	
+	background-image:url(http://www.socketcms.co.uk/cdn/aqua_bg_tile_20.png);	
 	width: 20px;
 }
 
 .stripeMe td.buttonCol2 {
-	background-image:url(http://cache.invasionmedia.co.uk/aqua_bg_tile_30.png);	
+	background-image:url(http://www.socketcms.co.uk/cdn/aqua_bg_tile_30.png);	
 	width: 20px;
 }
 
 .stripeMe tr.alt td.buttonCol {
-	background-image:url(http://cache.invasionmedia.co.uk/aqua_bg_tile_30.png);	
+	background-image:url(http://www.socketcms.co.uk/cdn/aqua_bg_tile_30.png);	
 	width: 20px;
 }
 
 .stripeMe tr.alt td.buttonCol2 {
-	background-image:url(http://cache.invasionmedia.co.uk/aqua_bg_tile_40.png);	
+	background-image:url(http://www.socketcms.co.uk/cdn/aqua_bg_tile_40.png);	
 	width: 20px;
 }
 
 .stripeMe td.deadCol {
-	background-image:url(http://cache.invasionmedia.co.uk/black_bg_tile_10.png);	
+	background-image:url(http://www.socketcms.co.uk/cdn/black_bg_tile_10.png);	
 	width: 20px;
 }
 .stripeMe tr.alt td.deadCol {
-	background-image:url(http://cache.invasionmedia.co.uk/black_bg_tile_20.png);	
+	background-image:url(http://www.socketcms.co.uk/cdn/black_bg_tile_20.png);	
 	width: 20px;
 }
 
 /* Adds striping for error tables */
 .stripeErr tr td {
-	background-image:url(http://cache.invasionmedia.co.uk/red_bg_tile_10.png);
+	background-image:url(http://www.socketcms.co.uk/cdn/red_bg_tile_10.png);
 	background-repeat:repeat;
 	border: 1px dotted #900;
 	padding: 4px;
 }
 .stripeErr tr.alt td {
-	background-image:url(http://cache.invasionmedia.co.uk/red_bg_tile_20.png);
+	background-image:url(http://www.socketcms.co.uk/cdn/red_bg_tile_20.png);
 	background-repeat:repeat;
 	border: 1px dotted #900;
 	padding: 4px;
 }
 .stripeErr tr.over td {
-	background-image:url(http://cache.invasionmedia.co.uk/red_bg_tile_70.png);
+	background-image:url(http://www.socketcms.co.uk/cdn/red_bg_tile_70.png);
 	background-repeat:repeat;
 }
 .stripeErr tr td:hover {
@@ -473,19 +473,19 @@ img { /* Remove this function if you want linked images to have a border */
 
 /* Adds striping for dead tables */
 .stripeDead tr td {
-	background-image:url(http://cache.invasionmedia.co.uk/black_bg_tile_10.png);
+	background-image:url(http://www.socketcms.co.uk/cdn/black_bg_tile_10.png);
 	background-repeat:repeat;
 	border: 1px dotted #000;
 	padding: 4px;
 }
 .stripeDead tr.alt td {
-	background-image:url(http://cache.invasionmedia.co.uk/black_bg_tile_20.png);
+	background-image:url(http://www.socketcms.co.uk/cdn/black_bg_tile_20.png);
 	background-repeat:repeat;
 	border: 1px dotted #000;
 	padding: 4px;
 }
 .stripeDead tr.over td {
-	background-image:url(http://cache.invasionmedia.co.uk/black_bg_tile_70.png);
+	background-image:url(http://www.socketcms.co.uk/cdn/black_bg_tile_70.png);
 	background-repeat:repeat;
 }
 .stripeDead tr td:hover {
@@ -513,7 +513,7 @@ label.tab {
 	height: 25px;
 	width: 380px;
 	line-height: 25px;
-	background-image:url(http://cache.invasionmedia.co.uk/cyan_bg_tile_20.png);
+	background-image:url(http://www.socketcms.co.uk/cdn/cyan_bg_tile_20.png);
 	background-repeat:repeat;
 	padding: 4px;
 	color: #369;
@@ -616,7 +616,7 @@ input.error, textarea.error, select.error, option.error {
 }
 /* CSS for the Idle Timer */
 #idletimeout {
-	background-image:url(http://cache.invasionmedia.co.uk/red_bg_tile_80.png); 
+	background-image:url(http://www.socketcms.co.uk/cdn/red_bg_tile_80.png); 
 	background-repeat:repeat;
 	border-bottom:1px dotted #000;
 	color: #900;
@@ -639,7 +639,7 @@ input.error, textarea.error, select.error, option.error {
 /* CSS for pagination */
 
 .pagination {
-	background-image:url(http://cache.invasionmedia.co.uk/cyan_bg_tile_80.png); 
+	background-image:url(http://www.socketcms.co.uk/cdn/cyan_bg_tile_80.png); 
 	background-repeat:repeat;
 	height: 22px;
 	width: 796px;
@@ -700,7 +700,7 @@ input.error, textarea.error, select.error, option.error {
 
 /* Toast */
 .toast {
-	background-image:url(http://cache.invasionmedia.co.uk/red_bg_tile_40.png); 
+	background-image:url(http://www.socketcms.co.uk/cdn/red_bg_tile_40.png); 
 	background-repeat:repeat;
 	border-bottom:1px dotted #000;
 	color: #900;

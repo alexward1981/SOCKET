@@ -20,7 +20,7 @@ function initFB() {
 //If the user is logged in, display the socket access button
 if (isset($_SESSION['userID']) && $_SESSION['usr_access_lvl'] <= 5) { ?> 
 <div class="socket_button">
-<a class="noPrint" href="<?php echo $siteroot ?>/socket/index.php"><img class="float_right inline" src="http://cache.invasionmedia.co.uk/socket/socket_icon.png" alt="Click here to access your SOCKET control panel" /></a></div>
+<a class="noPrint" href="<?php echo $siteroot ?>/socket/index.php"><img class="float_right inline" src="http://www.socketcms.co.uk/cdn/socket/socket_icon.png" alt="Click here to access your SOCKET control panel" /></a></div>
 <?php 
 }
 //Turns the site off and on.
@@ -55,7 +55,7 @@ if($site_status == 2) { ?>
  <?php exit; } 
  if($site_status == 3) { ?>
 <div id="deactivated">
- <img src="http://cache.invasionmedia.co.uk/elements/logo_white.jpg" alt="Invasion Media" />
+ <img src="http://www.socketcms.co.uk/cdn/elements/logo_white.jpg" alt="Invasion Media" />
  <h1>WEBSITE DEACTIVATED!</h1>
  <p>This site has been deactivated by the Invasion Media Accounts Department</p><br>
 

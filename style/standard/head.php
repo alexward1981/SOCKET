@@ -24,7 +24,7 @@ if ($pageID == 1) { ?>
 <!-- RSS Announce Feed -->
 <link rel="alternate" type="application/rss+xml" title="Digital Fusion Magazine" href="<?php echo $siteroot ?>/rss.php" /> 
 <!-- Stylesheets -->
-<link href="http://cache.invasionmedia.co.uk/global.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="http://www.socketcms.co.uk/cdn/global.css" rel="stylesheet" type="text/css" media="screen" />
 <link href="<?php echo $siteroot ?>/style/standard/standard.css" rel="stylesheet" type="text/css" media="screen" />
 <link href="<?php echo $siteroot ?>/style/standard/print.css" rel="stylesheet" type="text/css" media="print" />
 
