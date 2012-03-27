@@ -7,14 +7,14 @@
 	if($_SESSION['usr_avatar']) {
 		if ($_SESSION['usr_access_lvl'] >= 2) 
 		{ 
-		echo '<img width="100" height="100" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$serverroot.'/socket/modules/users/'.$_SESSION['usr_avatar'].'&amp;w=100&amp;h=100&amp;zc=c" alt="'.$_SESSION['username'].'"/>';
+		echo '<img width="100" height="100" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.SERVERROOT.'/socket/modules/users/'.$_SESSION['usr_avatar'].'&amp;w=100&amp;h=100&amp;zc=c" alt="'.$_SESSION['username'].'"/>';
 		} else
 		{ 
-		echo '<img width="100" height="100" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src=http://www.invasionmedia.co.uk/socket/modules/users/'.$_SESSION['usr_avatar'].'&amp;w=100&amp;h=100&amp;zc=c" alt="'.$_SESSION['username'].'"/>';
+		echo '<img width="100" height="100" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src=http://www.invasionmedia.co.uk/socket/modules/users/'.$_SESSION['usr_avatar'].'&amp;w=100&amp;h=100&amp;zc=c" alt="'.$_SESSION['username'].'"/>';
 		}
 	} else
 	{
-	echo '<img width="100" height="100" src="'.$socketroot.'/modules/users/avatars/no_avatar.jpg" alt="No Profile Pic"/>';	
+	echo '<img width="100" height="100" src="'.SOCKETROOT.'/modules/users/avatars/no_avatar.jpg" alt="No Profile Pic"/>';	
 	}
 	?></td>
   </tr>
@@ -27,9 +27,9 @@
 <?php if ($_SESSION['usr_access_lvl'] <= 2) { ?>
 <a href="http://www.invasionmedia.co.uk/socket/modules/users/admin_users_edit.php?ID=<?php echo $_SESSION['userID']; ?>
 <?php } else { ?>
-<a href="<?php echo $socketroot; ?>/modules/users/admin_users_edit.php?ID=<?php echo $_SESSION['userID']; ?>
+<a href="<?php echo SOCKETROOT; ?>/modules/users/admin_users_edit.php?ID=<?php echo $_SESSION['userID']; ?>
 <?php } ?>
-">Edit profile</a></p><p class="button"><a href="<?php echo $socketroot; ?>/logout.php">Logout</a></p></div></td>
+">Edit profile</a></p><p class="button"><a href="<?php echo SOCKETROOT; ?>/logout.php">Logout</a></p></div></td>
     </tr>
 </table>
 <div class="right">&nbsp;</div>

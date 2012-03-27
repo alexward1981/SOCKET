@@ -4,7 +4,7 @@
 $current_module = 2;
 
 require_once('../../templates/standard/socket_header.php'); ?>
-                    <p class="float_right button"> <a href="<?php echo $siteroot?>/socket/index.php">Discard</a></p><h1>Article Editor</h1>
+                    <p class="float_right button"> <a href="<?php echo SITEROOT?>/socket/index.php">Discard</a></p><h1>Article Editor</h1>
           <p>From here you can edit your stream articles.</p>
           <?php
 if($_GET['ID'])
@@ -41,7 +41,7 @@ if($_GET['ID'])
 			if($db_filetype == 'image/jpeg' || $db_filetype == 'image/jpg' ||  $db_filetype == 'image/gif' || $db_filetype == 'image/png') 
 				{
 			$articleImage = '/articleimages/'.date(dmy).'_'.$_FILES['articleImage']['name'];
-			$imageLocation = $serverroot .'/articleimages/';
+			$imageLocation = SERVERROOT .'/articleimages/';
 			$imageTempName = $_FILES['articleImage']['tmp_name'];
 			$imageName = date(dmy) .'_'. $_FILES['articleImage']['name'];
 			move_uploaded_file($imageTempName, "$imageLocation/$imageName");
@@ -65,7 +65,7 @@ if($_GET['ID'])
 	?>
 	<!-- javascript send message to menu -->
 <script language="JavaScript">
-      window.location.href = '<?php echo $socketroot ?>/modules/stream/admin_stream.php?message=' + <?php echo $message; ?>;
+      window.location.href = '<?php echo SOCKETROOT ?>/modules/stream/admin_stream.php?message=' + <?php echo $message; ?>;
 </script>
 		<?php }}
 		?>

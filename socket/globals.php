@@ -9,47 +9,31 @@
 /* appropriate experience make changes to this file      */
 /*********************************************************/
 
-// SOCKET INFORMATION
+//Change error reporting method
 
-$socket_version = 2.0;
+error_reporting(E_ALL ^ E_NOTICE); // all except notices;
+
+// SOCKET INFORMATION
+$socket_version = 2.5;
 $socket_version_name = 'Galactica';
 
-// Make a connection to SOCKET Prime - Do not edit this docuement or remove this line.
-require_once($_SERVER['DOCUMENT_ROOT'].'/socket/gconnect.php');
+//SOCKET settings
+define('SITEROOT', 'http://'.$_SERVER['SERVER_NAME']); 
+define('SOCKETROOT', SITEROOT .'/socket'); 
+define('SERVERROOT', $_SERVER['DOCUMENT_ROOT']);
+//database connection details
+define('SQL_HOST', 'localhost');
+define('SQL_DB', 'web126-socket');
+define('SQL_UN', 'web126-socket');
+define('SQL_PW', 'jkkd02kod9polma-dsgf_9i23');
+//Facebook
+define('FB_APP_ID', '109444512520512');
+define('FB_APP_SECRET', '07ba5ac4c6830469ae35152d53eed1dc');
 
-// A few global variables.
-$socketroot = $siteroot .'/socket';
-$serverroot = substr_replace($_SERVER['DOCUMENT_ROOT'] ,"",-1);
-
-// If you have a development site located on another domain (or subdomain) enter it below.
-$devSiteURL = 'www.digitalfusiondev.me';
-if ($_SERVER['SERVER_NAME'] == $devSiteURL) { // Site is on development server
-	$devMode = 1;
-	$mainURL = 'http://'.$_SERVER['SERVER_NAME'];
-	$hostname_conn = "localhost";
-	$database_conn = "web132-socket";
-	$username_conn = "web132-socket";
-	$password_conn = "jkkd02kod9polma-dsgf_9i23";
-} else { // Site is on live server
-	$devMode = 0;
-	//If your site uses multiple live domains, specify the primary one here, if not then leave it blank
-	$mainURL = 'http://www.digitalfusionmag.com';
-	$hostname_conn = "localhost";
-	$database_conn = "web126-socket";
-	$username_conn = "web126-socket";
-	$password_conn = "jkkd02kod9polma-dsgf_9i23";
-}
-
-// Do not edit.
-if ($mainURL) {
-	$siteroot = $mainURL;
-} else {
-	$siteroot = 'http://'.$_SERVER['SERVER_NAME'];
-}
 
 //CONNECTION STRING - DO NOT MODIFY //
-$conn = mysql_connect($hostname_conn, $username_conn, $password_conn) or trigger_error(mysql_error(),E_USER_ERROR); 
-mysql_select_db($database_conn) or die('I cannot select the database because:'.mysql_error());
+$conn = mysql_connect(SQL_HOST, SQL_UN, SQL_PW) or trigger_error(mysql_error(),E_USER_ERROR); 
+mysql_select_db(SQL_DB) or die('I cannot select the database because:'.mysql_error());
 
 // Brings in the settings from the config database
 $configLookup= "SELECT server_hash, siteadmin, latLang, site_status FROM core_config";
@@ -59,22 +43,6 @@ list($server_hash, $socketadmin, $latLang, $site_status_code) = mysql_fetch_arra
 $site_status = $site_status_code;
 $real_site_status = $site_status_code; //Logged in users always get a live site status, this displays the real site status even when logged in
 
-// Brings in the remote data from the global database
-if($setSocket) {
-if (!$noConnection) {
-$globalLookup= "SELECT customerID, site_hash, subscription_tier, sub_due_date FROM core_customers WHERE site_hash='$server_hash'";
-$globalData = mysql_query($globalLookup, $globalconn) or die('Failed to return data: ' . mysql_error());
-list($customerID, $site_hash, $subscription_tier, $sub_due_date) = mysql_fetch_array($globalData, MYSQL_NUM);
-
-
-// Resolves tier ID into friendly name
-$tierLookup= "SELECT tierID, tier_name, subscription_price FROM core_tier_levels WHERE tierID =" . $subscription_tier;
-$tierData = mysql_query($tierLookup, $globalconn) or die('Failed to return data: ' . mysql_error());
-list($tierID, $tier_name, $subscription_price) = mysql_fetch_array($tierData, MYSQL_NUM);
-
-$sub_package = $tier_name;
-} else { $socketErr = 'SOCKET error: Please try again later. Apologies for any inconvenience'; }
-}
 // Brings in the settings from the company database
 $contactLookup= "SELECT * FROM core_contacts WHERE siteID =1";
 $contactData = mysql_query($contactLookup, $conn) or die('Failed to return data: ' . mysql_error());
@@ -82,61 +50,60 @@ $contactData = mysql_query($contactLookup, $conn) or die('Failed to return data:
 /* sorts the data into variables and puts them in an array ready to be called when needed */
 while(list($db_siteid, $db_site_name, $db_catchline, $db_site_description, $db_site_manager, $db_address1, $db_address2, $db_town, $db_county, $db_postcode, $db_country, $db_tel, $db_mob, $db_email, $db_twitter, $db_twitter_pw, $db_skype, $db_messenger, $db_response) = mysql_fetch_array($contactData, MYSQL_NUM))
 {
-$sc_sitename = $db_site_name;
-$sc_meta_title = $db_catchline;
-$sc_meta_desc = $db_site_description;
-$sc_sitemanager = $db_site_manager;
-$sc_address_line1 = $db_address1;
-$sc_address_line2 = $db_address2;
-$sc_town_name = $db_town;
-$sc_county = $db_county;
-$sc_postcode = $db_postcode;
-$sc_country = $db_country;
-$sc_telephone = $db_tel;
-$sc_mobile = $db_mob;
-$sc_email = $db_email;
-$sc_twitter = $db_twitter;
-$sc_twitter_pw = $db_twitter_pw;
-$sc_skypeID = $db_skype;
-$sc_messenger = $db_messenger;
+	$sc_sitename = $db_site_name;
+	$sc_meta_title = $db_catchline;
+	$sc_meta_desc = $db_site_description;
+	$sc_sitemanager = $db_site_manager;
+	$sc_address_line1 = $db_address1;
+	$sc_address_line2 = $db_address2;
+	$sc_town_name = $db_town;
+	$sc_county = $db_county;
+	$sc_postcode = $db_postcode;
+	$sc_country = $db_country;
+	$sc_telephone = $db_tel;
+	$sc_mobile = $db_mob;
+	$sc_email = $db_email;
+	$sc_twitter = $db_twitter;
+	$sc_twitter_pw = $db_twitter_pw;
+	$sc_skypeID = $db_skype;
+	$sc_messenger = $db_messenger;
 
-switch ($db_messenger) {
-	case strpos($db_messenger, "yahoo"): 
-		$sc_messenger_type = "Yahoo Messenger";
-	break;
-	case strpos($db_messenger, "hotmail") || strpos($db_messenger, "msn"): 
-		$sc_messenger_type = "MSN Messenger";
-	break;
-	case strpos($db_messenger, "google") || strpos($db_messenger, "gmail"): 
-		$sc_messenger_type = "Google Talk";
-	break;
-	case strpos($db_messenger, "aol") || strpos($db_messenger, "america") : 
-		$sc_messenger_type = "AOL Messenger";
-	break;
-	default: 
-		$sc_messenger_type = "IM";
-	break;
-}
+	switch ($db_messenger) {
+		case strpos($db_messenger, "yahoo"): 
+			$sc_messenger_type = "Yahoo Messenger";
+		break;
+		case strpos($db_messenger, "hotmail") || strpos($db_messenger, "msn"): 
+			$sc_messenger_type = "MSN Messenger";
+		break;
+		case strpos($db_messenger, "google") || strpos($db_messenger, "gmail"): 
+			$sc_messenger_type = "Google Talk";
+		break;
+		case strpos($db_messenger, "aol") || strpos($db_messenger, "america") : 
+			$sc_messenger_type = "AOL Messenger";
+		break;
+		default: 
+			$sc_messenger_type = "IM";
+		break;
+	}
 
-
-switch ($db_response) {
-	case 1: 
-		$response_result = "the same day";
-	break;
-	case 2: 
-		$response_result = "24 hours";
-	break;
-	case 3: 
-		$response_result = "48 hours";
-	break;
-	case 4: 
-		$response_result = "one week";
-	break;
-	case 5: 
-		$response_result = "the month";
-	break;
-}
-$response_time = $response_result;
+	switch ($db_response) {
+		case 1: 
+			$response_result = "the same day";
+		break;
+		case 2: 
+			$response_result = "24 hours";
+		break;
+		case 3: 
+			$response_result = "48 hours";
+		break;
+		case 4: 
+			$response_result = "one week";
+		break;
+		case 5: 
+			$response_result = "the month";
+		break;
+	}
+	$response_time = $response_result;
 
 }
 
@@ -146,15 +113,13 @@ $seoData = mysql_query($seoLookup) or die('Failed to return data: ' . mysql_erro
 list($default_keywords) = mysql_fetch_array($seoData, MYSQL_NUM);
 
 //Performs the functions required for Facebook Connect
-if ($devMode != 1) {
-include_once $_SERVER['DOCUMENT_ROOT'] . 'Scripts/facebook-platform/footprints/config.php';
-} else {
-include_once $_SERVER['DOCUMENT_ROOT'] . 'Scripts/facebook-platform/footprints/config-dev.php';
-}
-include_once $_SERVER['DOCUMENT_ROOT'] . 'Scripts/facebook-platform/php/facebook.php';
-global $api_key,$secret;
-$fb=new Facebook($api_key,$secret);
-$fb_user=$fb->get_loggedin_user();
+require_once (SERVERROOT . '/assets/scripts/facebook/facebook.php');
+$facebook = new Facebook(array(
+    'appId'  => FB_APP_ID,
+    'secret' => FB_APP_SECRET,
+));
+// Get User ID
+$user = $facebook->getUser();
 
 /*********************************************************/
 /*                       MODULES                         */
@@ -162,14 +127,10 @@ $fb_user=$fb->get_loggedin_user();
 
 // IMPORTANT: Do not include any modules that have not been installed. This will cause the site to break.
 
-// Poll Module
-require_once($serverroot.'/socket/modules/poll/module_config.php');
 // Media Module
-require_once($serverroot.'/socket/modules/media/module_config.php');
+require_once(SERVERROOT.'/socket/modules/media/module_config.php');
 // Blog Module
-require_once($serverroot.'/socket/modules/blog/module_config.php');
-// Google adsense Module
-require_once($serverroot.'/socket/modules/adsense/module_config.php');
+require_once(SERVERROOT.'/socket/modules/blog/module_config.php');
 
 /*********************************************************/
 /*                      FUNCTIONS                        */

@@ -54,30 +54,30 @@ $searchrows = mysql_num_rows($data);
 echo '	<tr>';
 echo '    <td class="buttons" width="32"  align="center">';
 if ($result['usr_avatar']) {
-echo '    <img src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$serverroot.'/socket/modules/users/'.$result['usr_avatar'].'&amp;w=35&amp;h=35&amp;zc=c" alt="'.$result['usr_username'].'\'s profile picture"/></td>';
+echo '    <img src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.SERVERROOT.'/socket/modules/users/'.$result['usr_avatar'].'&amp;w=35&amp;h=35&amp;zc=c" alt="'.$result['usr_username'].'\'s profile picture"/></td>';
 } else
 {
-	echo '    <img src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src=' . $serverroot . '/socket/modules/users/avatars/no_avatar.jpg&amp;w=35&amp;h=35&amp;zc=c" alt="'.$result['usr_username'].'\'s profile picture"/></td>';
+	echo '    <img src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src=' . SERVERROOT . '/socket/modules/users/avatars/no_avatar.jpg&amp;w=35&amp;h=35&amp;zc=c" alt="'.$result['usr_username'].'\'s profile picture"/></td>';
 }
 echo '    <td> <strong>&nbsp;' . $result["usr_firstname"]. ' ' . $result["usr_surname"]. ' </strong>( '. $user_type . ' )</td>';
 echo '    <td class="buttons" width="32"  align="center">';
-echo '    <a href="'.$siteroot.'/modules/users/profiles.php?uid='. $result["userID"].'"><img src="' . $socketroot . '/elements/buttons/button_open.png" width="32" height="32" alt="View User" /></a></td>';
+echo '    <a href="'.SITEROOT.'/modules/users/profiles.php?uid='. $result["userID"].'"><img src="' . SOCKETROOT . '/assets/images/buttons/button_open.png" width="32" height="32" alt="View User" /></a></td>';
 	if ($_SESSION['usr_access_lvl'] <= 1) {
 echo '    <td class="buttons" width="32" align="center">';
-echo '    <a href="admin_users_edit.php?ID='. $result["userID"].'"><img src="' . $socketroot . '/elements/buttons/button_edit.png" width="32" height="32" alt="Edit User" /></a></td>';
+echo '    <a href="admin_users_edit.php?ID='. $result["userID"].'"><img src="' . SOCKETROOT . '/assets/images/buttons/button_edit.png" width="32" height="32" alt="Edit User" /></a></td>';
 } elseif ($_SESSION['usr_access_lvl'] <= 1) {
 echo '    <td class="buttons" width="32" align="center">';
-echo '    <a href="admin_users_edit.php?ID='. $result["userID"].'"><img src="' . $socketroot . '/elements/buttons/button_edit.png" width="32" height="32" alt="Edit User" /></a></td>';
+echo '    <a href="admin_users_edit.php?ID='. $result["userID"].'"><img src="' . SOCKETROOT . '/assets/images/buttons/button_edit.png" width="32" height="32" alt="Edit User" /></a></td>';
 } else { 
 		echo '<td width="28" class="deadcol" align="center">';
-		echo '<img src="' . $siteroot . '/socket/elements/buttons/off_button_edit.png" width="32" height="32" alt="Cannot Delete Page" /></td>'; }
+		echo '<img src="' . SITEROOT . '/socket/assets/images/buttons/off_button_edit.png" width="32" height="32" alt="Cannot Delete Page" /></td>'; }
 // Admin switch yet to add
 	if ($_SESSION['usr_access_lvl'] <= 1 && $result["userID"] != $_SESSION['userID']) {
 	echo '<td class="buttons" width="32" align="center">';
-	echo '<a href="javascript:deleteContent(\''. $result["userID"].'\');"><img src="' . $socketroot . '/elements/buttons/button_delete.png" width="32" height="32" alt="Delete User" /></a></td>';
+	echo '<a href="javascript:deleteContent(\''. $result["userID"].'\');"><img src="' . SOCKETROOT . '/assets/images/buttons/button_delete.png" width="32" height="32" alt="Delete User" /></a></td>';
 } else { 
 		echo '<td width="28" class="deadcol" align="center">';
-		echo '<img src="' . $socketroot . '/elements/buttons/off_button_delete.png" width="32" height="32" alt="Cannot Delete Page" /></td>'; }
+		echo '<img src="' . SOCKETROOT . '/assets/images/buttons/off_button_delete.png" width="32" height="32" alt="Cannot Delete Page" /></td>'; }
 echo '  </tr>';
 		
     		};

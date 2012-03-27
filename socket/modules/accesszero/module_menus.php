@@ -50,9 +50,9 @@ $searchrows = mysql_num_rows($data);
 echo '	<tr>';
 echo '    <td>' . $result["menu_item_name"]. '</td>';
 echo '    <td class="buttons" width="32" align="center">';
-echo '      <a href="module_menu_edit.php?ID='. $result["menuID"].'"><img src="' . $siteroot . '/socket/elements/buttons/button_edit.png" width="32" height="32" alt="Edit Page" /></a></td>';
+echo '      <a href="module_menu_edit.php?ID='. $result["menuID"].'"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_edit.png" width="32" height="32" alt="Edit Page" /></a></td>';
 	echo '<td class="buttons" width="32" align="center">';
-	echo '<a href="javascript:deleteContent(\''. $result["menuID"].'\');"><img src="' . $siteroot . '/socket/elements/buttons/button_delete.png" width="32" height="32" alt="Delete Page" /></a></td>';
+	echo '<a href="javascript:deleteContent(\''. $result["menuID"].'\');"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_delete.png" width="32" height="32" alt="Delete Page" /></a></td>';
 echo '  </tr>';
 		
     		};

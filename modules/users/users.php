@@ -5,16 +5,16 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/socket/globals.php'); // Selects the 
 <?php
 if ($_GET['authors']) {
 	$meta_title = 'Authors';
-	$special_crumb = '<a href="'. $siteroot . '/modules/users/users.php">'.users.'</a>';
+	$special_crumb = '<a href="'. SITEROOT . '/modules/users/users.php">'.users.'</a>';
 } else {
 	$meta_title = 'Users';
 }
 	$meta_keywords = "$meta_key";
 	$meta_description = $sc_sitename . '\'s list of users';
 	// imports header information
-require_once('' . $serverroot . '/style/standard/head.php');
-require_once('' . $serverroot . '/style/standard/head2.php');
-require_once('' . $serverroot . '/style/standard/header.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head2.php');
+require_once('' . SERVERROOT . '/assets/style/standard/header.php');
 if ($_GET['authors']) {
 echo '<h1>'. $sc_sitename .' Authors</h1>';
 } else {
@@ -34,9 +34,9 @@ if ($dbl_usr_firstname && $dbl_usr_surname) { $usr_realname = $dbl_usr_firstname
 /*HTML starts here */
 if ($_GET['authors']) { $avatarSize = 'w=90&amp;h=90'; } else { $avatarSize = 'w=50&amp;h=50'; }
 if($dbl_usr_avatar) {
-$userAvatar = '<img class="userAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$dbl_usr_avatar.'&amp;'.$avatarSize.'&amp;zc=c" title="'.$usr_realname.'" alt="'.$usr_realname.'\'s profile picture"/>';
+$userAvatar = '<img class="userAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.$dbl_usr_avatar.'&amp;'.$avatarSize.'&amp;zc=c" title="'.$usr_realname.'" alt="'.$usr_realname.'\'s profile picture"/>';
 } else {
-$userAvatar = '<img class="userAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$serverroot.'/socket/modules/users/avatars/no_avatar.jpg&amp;'.$avatarSize.'&amp;zc=c" title="User does not have a profile picture" alt="User does not have a profile picture" />';	
+$userAvatar = '<img class="userAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.SERVERROOT.'/socket/modules/users/avatars/no_avatar.jpg&amp;'.$avatarSize.'&amp;zc=c" title="User does not have a profile picture" alt="User does not have a profile picture" />';	
 }
 switch ($dbl_usr_access_lvl) {
 	case 0: 
@@ -74,15 +74,15 @@ $commentCount = mysql_num_rows($userComments);
 if ($_GET['authors']) {
 $contact_buttons = '<div class="contact_buttons">';
 //Email
-if ($dbl_usr_email && $dbl_usr_email_private !=1) { $contact_buttons .= '<a href="mailto:'.$dbl_usr_email.'"> <img src="'.$siteroot.'/modules/users/elements/btn_email.png" alt="Email '.$usr_realname.'" title="Email '. $usr_realname.'" /></a>'; }
+if ($dbl_usr_email && $dbl_usr_email_private !=1) { $contact_buttons .= '<a href="mailto:'.$dbl_usr_email.'"> <img src="'.SITEROOT.'/modules/users/assets/images/btn_email.png" alt="Email '.$usr_realname.'" title="Email '. $usr_realname.'" /></a>'; }
 //Twitter
-if ($dbl_usr_twitter) { $contact_buttons .= '<a href="http://www.twitter.com/'.$dbl_usr_twitter.'"> <img src="'.$siteroot.'/modules/users/elements/btn_twitter.png" alt="'.$usr_realname.'\'s Twitter page" title="'. $usr_realname.'\'s Twitter page" /></a>'; }
+if ($dbl_usr_twitter) { $contact_buttons .= '<a href="http://www.twitter.com/'.$dbl_usr_twitter.'"> <img src="'.SITEROOT.'/modules/users/assets/images/btn_twitter.png" alt="'.$usr_realname.'\'s Twitter page" title="'. $usr_realname.'\'s Twitter page" /></a>'; }
 //Facebook
-if ($dbl_usr_facebook) { $contact_buttons .= '<a href="http://www.facebook.com/'.$dbl_usr_facebook.'"> <img src="'.$siteroot.'/modules/users/elements/btn_facebook.png" alt="'.$usr_realname.'\'s Facebook Profile" title="'. $usr_realname.'\'s Facebook Profile" /></a>'; }
+if ($dbl_usr_facebook) { $contact_buttons .= '<a href="http://www.facebook.com/'.$dbl_usr_facebook.'"> <img src="'.SITEROOT.'/modules/users/assets/images/btn_facebook.png" alt="'.$usr_realname.'\'s Facebook Profile" title="'. $usr_realname.'\'s Facebook Profile" /></a>'; }
 //LinkedIn
-if ($dbl_usr_linkedin) { $contact_buttons .= '<a href="http://www.linkedin.com/in/'.$dbl_usr_linkedin.'"> <img src="'.$siteroot.'/modules/users/elements/btn_linkedin.png" alt="'.$usr_realname.'\'s LinkedIn Profile" title="'. $usr_realname.'\'s LinkedIn Profile" /></a>'; }
+if ($dbl_usr_linkedin) { $contact_buttons .= '<a href="http://www.linkedin.com/in/'.$dbl_usr_linkedin.'"> <img src="'.SITEROOT.'/modules/users/assets/images/btn_linkedin.png" alt="'.$usr_realname.'\'s LinkedIn Profile" title="'. $usr_realname.'\'s LinkedIn Profile" /></a>'; }
 //RSS
-if ($postCount) { $contact_buttons .= '<a href="'.$siteroot.'/rss-'.$dbl_usr_username.'.php"> <img src="'.$siteroot.'/modules/users/elements/btn_rss.png" alt="Add '.$usr_realname.'\'s posts to your RSS feed" title="Add '.$usr_realname.'\'s posts to your RSS feed" /></a>'; }
+if ($postCount) { $contact_buttons .= '<a href="'.SITEROOT.'/rss-'.$dbl_usr_username.'.php"> <img src="'.SITEROOT.'/modules/users/assets/images/btn_rss.png" alt="Add '.$usr_realname.'\'s posts to your RSS feed" title="Add '.$usr_realname.'\'s posts to your RSS feed" /></a>'; }
 
 
 
@@ -96,8 +96,8 @@ if (!$_GET['authors']) { echo '<div class="userWrapper">'; }
 
 <div class="profileHeader">
 <div class="top_right_box"><strong>Posts: </strong><?php echo $postCount; ?><br /><strong>Comments: </strong><?php echo $commentCount; ?><br />
-<img class="margintop5px" src="<?php echo $siteroot .'/elements/stars_'.$al_pic.'.png'; ?>" alt="<?php echo $usr_is; ?>" title="<?php echo $usr_is; ?>" /></div><a title="View <?php echo $usr_realname . '\'s profile'?>" href="<?php echo $siteroot .'/users/'.$dbl_usr_username ?>"><?php echo $userAvatar; ?></a>
-<h2><a href="<?php echo $siteroot .'/users/'.$dbl_usr_username ?>"><?php echo $usr_realname ?></a></h2>
+<img class="margintop5px" src="<?php echo SITEROOT .'/assets/images/stars_'.$al_pic.'.png'; ?>" alt="<?php echo $usr_is; ?>" title="<?php echo $usr_is; ?>" /></div><a title="View <?php echo $usr_realname . '\'s profile'?>" href="<?php echo SITEROOT .'/users/'.$dbl_usr_username ?>"><?php echo $userAvatar; ?></a>
+<h2><a href="<?php echo SITEROOT .'/users/'.$dbl_usr_username ?>"><?php echo $usr_realname ?></a></h2>
 <span><?php echo '<strong>Username: </strong>' . $dbl_usr_username; ?></span><br />
 <?php 
 if ($dbl_usr_city || $dbl_usr_country) {
@@ -117,5 +117,5 @@ echo $dbl_usr_country;
 if (!$_GET['authors']) { echo '</div>'; }
 }
 //Main content ends here
-require_once('' . $serverroot . '/style/standard/footer.php');
+require_once('' . SERVERROOT . '/assets/style/standard/footer.php');
 ?>

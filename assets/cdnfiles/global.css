@@ -1,0 +1,166 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* This Document contains classes that can always be used on any page of any website, these styles may be overridden within the site template CSS file */
+
+.float_right { float:right; }
+.float_left { float:left; }
+.clear { display:block; height: 1px; clear:both;}
+.center { text-align:center; }
+.fixed { position:fixed; }
+
+
+.dotted_line { width: 100%; border-top: 1px #000000 dotted; padding: 0px; margin:0px; line-height: 10px;}
+.white_dotted_underline { width: 100%; border-bottom: 1px #fff dotted;}
+.solid_line  { width: 100%; border-top: 1px #000000 solid; padding: 0px; margin:0px; line-height: 10px;}
+.dashed  { width: 100%; border-top: 1px #000000 dashed; padding: 0px; margin:0px; line-height: 10px;}
+
+.1pxblackbdr {border: 1px #000 solid;}
+.cellblackbdr {border: 1px #000 solid; display:table-cell; }
+
+
+.width_full { width: 100%;}
+.width_half { width: 50%;}
+.width_quarter { width: 25%;}
+
+.hidden { display:none; }
+.block { display:block; }
+.inline { display:inline; }
+.table { display: table }
+.table_cell {display:table-cell;}
+
+
+.bold { font-weight:bold;}
+.strong {font-weight:bolder;}
+.italic { font-style:italic;}
+.smallcaps {font-variant:small-caps;}
+.caps {text-transform:uppercase;}
+
+.nopadding {padding: 0px;}
+
+.padding1px {padding: 1px;}
+.padding2px {padding: 2px;}
+.padding3px {padding: 3px;}
+.padding4px {padding: 4px;}
+.padding5px {padding: 5px;}
+.padding10px {padding: 10px;}
+
+.paddingright5px {padding-right: 5px;}
+.paddingright10px {padding-right: 10px;}
+
+.paddingleft5px {padding-left: 5px;}
+.paddingleft10px {padding-left: 10px;}
+
+.paddingtop5px {padding-top: 5px;}
+.paddingtop10px {padding-top: 10px;}
+.paddingtop15px {padding-top: 15px;}
+.paddingtop20px {padding-top: 20px;}
+.paddingtop25px {padding-top: 25px;}
+
+.paddingbottom5px {padding-bottom: 5px;}
+.paddingbottom10px {padding-bottom: 10px;}
+.paddingbottom15px {padding-bottom: 15px;}
+.paddingbottom20px {padding-bottom: 20px;}
+.paddingbottom25px {padding-bottom: 25px;}
+
+.nomargin {margin: 0px;}
+.margin5px {margin: 5px;}
+.margin10px {margin: 10px;}
+.marginright5px {margin-right: 5px;}
+.marginright10px {margin-right: 10px;}
+.marginleft5px {margin-left: 5px;}
+.marginleft10px {margin-left: 10px;}
+.margintop5px {margin-top: 5px;}
+.margintop10px {margin-top: 10px;}
+.margintop15px {margin-top: 15px;}
+.marginbottom5px {margin-bottom: 5px;}
+.marginbottom10px {margin-bottom: 10px;}
+.marginbottom15px {margin-bottom: 15px;}
+.marginbottom20px {margin-bottom: 20px;}
+
+.red {color: #F00;}
+.white {color:#FFF;}
+.black {color:#000;}
+.blue {color: #00F;}
+.green {color: #0F0;}
+.yellow {color:#FF0;} 
+.orange {color:#F60;}
+.purple {color:#F0F;}
+
+.size10font {font-size:10px;}
+.size11font {font-size:11px;}
+.size12font {font-size:12px;}
+.size14font {font-size:14px;}
+.size16font {font-size:16px;}
+.size18font {font-size:18px;}
+.size20font {font-size:20px;}
+.size24font {font-size:24px;}
+.size28font {font-size:28px;}
+.size30font {font-size:30px;}
+.size36font {font-size:36px;}
+
+.lineheight12px {line-height: 12px;}
+.lineheight14px {line-height: 14px;}
+.lineheight16px {line-height: 16px;}
+.lineheight18px {line-height: 18px;}
+.lineheight20px {line-height: 20px;}
+.lineheight24px {line-height: 24px;}
+.lineheight26px {line-height: 26px;}
+.lineheight30px {line-height: 30px;}
+.lineheight36px {line-height: 36px;}
+
+/* All sites created with socket v1.2.1 onward contain the option to disable the website either by the admin or by the super admin. The following CSS controls this function. */
+
+
+#deactivated {
+width: 600px;
+margin-top: 20px;
+margin-left:auto;
+margin-right:auto;
+background-color:#FFFFFF;
+text-align:center;
+padding: 20px;
+border: 3px #000 solid;
+-moz-border-radius: 20px;
+-webkit-border-radius: 20px;
+}
+
+#deactivated h1 {
+margin: 0px;
+margin-bottom: 5px;
+}
+
+#deactivated p {
+margin-bottom: 10px;
+}
+
+/* All sites created from version 1.5 (Equinox) will have a SOCKET button floating in the top right hand corner. The following CSS creates this button */
+
+.socket_button {
+	width: 21px;
+	height: 21px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+.socket_action_button {
+	width: 15px;
+	height: 15px;
+	float:right;
+	vertical-align:middle;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+#site_status {
+	width: 150px;
+    text-align: right;
+	position: absolute;
+	top: 8px;
+	right: 30px;
+}

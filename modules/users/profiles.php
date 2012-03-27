@@ -12,18 +12,18 @@ extract($dataArray, EXTR_PREFIX_ALL, "dbu");
 	$meta_keywords = "$meta_key";
 	$meta_description = $sitename . 'Profile for' . $dbu_usr_username;
 //If the previous level is not the home page, specify it here for it to display in the breadcrumbs	
-$special_crumb = '<a href="'. $siteroot . '/modules/users/users.php">'.users.'</a>';
+$special_crumb = '<a href="'. SITEROOT . '/modules/users/users.php">'.users.'</a>';
 // imports header information
-require_once('' . $serverroot . '/style/standard/head.php');
-require_once('' . $serverroot . '/style/standard/head2.php');
-require_once('' . $serverroot . '/style/standard/header.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head2.php');
+require_once('' . SERVERROOT . '/assets/style/standard/header.php');
 // Outputs users real name if available and the username if not.
 if ($dbu_usr_firstname && $dbu_usr_surname) { $usr_realname = $dbu_usr_firstname .' '. $dbu_usr_surname; } else { $usr_realname = $dbu_usr_username; }
 /*HTML starts here */
 if ($dbu_usr_avatar) {
-$userAvatar = '<img class="userAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$dbu_usr_avatar.'&amp;w=90&amp;h=90&amp;zc=c" title="'.$usr_realname.'" alt="'.$usr_realname.'\'s profile picture"/>';
+$userAvatar = '<img class="userAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.$dbu_usr_avatar.'&amp;w=90&amp;h=90&amp;zc=c" title="'.$usr_realname.'" alt="'.$usr_realname.'\'s profile picture"/>';
 } else {
-$userAvatar = '<img class="userAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$serverroot.'/socket/modules/users/avatars/no_avatar.jpg&amp;w=90&amp;h=90&amp;zc=c" title="User does not have a profile picture"/>';	
+$userAvatar = '<img class="userAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.SERVERROOT.'/socket/modules/users/avatars/no_avatar.jpg&amp;w=90&amp;h=90&amp;zc=c" title="User does not have a profile picture"/>';	
 }
 switch ($dbu_usr_access_lvl) {
 	case 0: 
@@ -64,17 +64,17 @@ $commentCount = mysql_num_rows($userCommentCount);
 // Gets all available public contact details for user and displays them on the site
 $contact_buttons = '<div class="contact_buttons">';
 //Email
-if ($dbu_usr_email && $dbu_usr_email_private != 1) { $contact_buttons .= '<a href="mailto:'.$dbu_usr_email.'"> <img src="'.$siteroot.'/modules/users/elements/btn_email.png" alt="Email '.$usr_realname.'" title="Email '. $usr_realname.'" /></a>'; }
+if ($dbu_usr_email && $dbu_usr_email_private != 1) { $contact_buttons .= '<a href="mailto:'.$dbu_usr_email.'"> <img src="'.SITEROOT.'/modules/users/assets/images/btn_email.png" alt="Email '.$usr_realname.'" title="Email '. $usr_realname.'" /></a>'; }
 //Twitter
-if ($dbu_usr_twitter) { $contact_buttons .= '<a href="http://www.twitter.com/'.$dbu_usr_twitter.'"> <img src="'.$siteroot.'/modules/users/elements/btn_twitter.png" alt="'.$usr_realname.'\'s Twitter page" title="'. $usr_realname.'\'s Twitter page" /></a>'; }
+if ($dbu_usr_twitter) { $contact_buttons .= '<a href="http://www.twitter.com/'.$dbu_usr_twitter.'"> <img src="'.SITEROOT.'/modules/users/assets/images/btn_twitter.png" alt="'.$usr_realname.'\'s Twitter page" title="'. $usr_realname.'\'s Twitter page" /></a>'; }
 //Facebook
-if ($dbu_usr_facebook) { $contact_buttons .= '<a href="http://www.facebook.com/'.$dbu_usr_facebook.'"> <img src="'.$siteroot.'/modules/users/elements/btn_facebook.png" alt="'.$usr_realname.'\'s Facebook Profile" title="'. $usr_realname.'\'s Facebook Profile" /></a>'; }
+if ($dbu_usr_facebook) { $contact_buttons .= '<a href="http://www.facebook.com/'.$dbu_usr_facebook.'"> <img src="'.SITEROOT.'/modules/users/assets/images/btn_facebook.png" alt="'.$usr_realname.'\'s Facebook Profile" title="'. $usr_realname.'\'s Facebook Profile" /></a>'; }
 //LinkedIn
-if ($dbu_usr_linkedin) { $contact_buttons .= '<a href="http://www.linkedin.com/in/'.$dbu_usr_linkedin.'"> <img src="'.$siteroot.'/modules/users/elements/btn_linkedin.png" alt="'.$usr_realname.'\'s LinkedIn Profile" title="'. $usr_realname.'\'s LinkedIn Profile" /></a>'; }
+if ($dbu_usr_linkedin) { $contact_buttons .= '<a href="http://www.linkedin.com/in/'.$dbu_usr_linkedin.'"> <img src="'.SITEROOT.'/modules/users/assets/images/btn_linkedin.png" alt="'.$usr_realname.'\'s LinkedIn Profile" title="'. $usr_realname.'\'s LinkedIn Profile" /></a>'; }
 //RSS
-if ($postCount) { $contact_buttons .= '<a href="'.$siteroot.'/rss-'.$dbu_usr_username.'.php"> <img src="'.$siteroot.'/modules/users/elements/btn_rss.png" alt="Add '.$usr_realname.'\'s posts to your RSS feed" title="Add '.$usr_realname.'\'s posts to your RSS feed" /></a>'; }
+if ($postCount) { $contact_buttons .= '<a href="'.SITEROOT.'/rss-'.$dbu_usr_username.'.php"> <img src="'.SITEROOT.'/modules/users/assets/images/btn_rss.png" alt="Add '.$usr_realname.'\'s posts to your RSS feed" title="Add '.$usr_realname.'\'s posts to your RSS feed" /></a>'; }
 // Settings
-if ($dbu_userID == $_SESSION['userID']) { $contact_buttons .= '<a href="'.$siteroot.'/modules/users/editprofile.php"> <img src="'.$siteroot.'/modules/users/elements/btn_editprofile.png" alt="Modify your account settings" title="Modify your account settings" /></a>'; }
+if ($dbu_userID == $_SESSION['userID']) { $contact_buttons .= '<a href="'.SITEROOT.'/modules/users/editprofile.php"> <img src="'.SITEROOT.'/modules/users/assets/images/btn_editprofile.png" alt="Modify your account settings" title="Modify your account settings" /></a>'; }
 
 
 //Close the contact buttons div
@@ -84,7 +84,7 @@ $contact_buttons .= '</div>';
 
 <div class="profileHeader">
 <div class="top_right_box"><strong>Posts: </strong><?php echo $postCount; ?><br /><strong>Comments: </strong><?php echo $commentCount; ?><br />
-<img class="margintop5px" src="<?php echo $siteroot .'/elements/stars_'.$al_pic.'.png'; ?>" alt="<?php echo $usr_is; ?>" title="<?php echo $usr_is; ?>" /></div><?php echo $userAvatar; ?><h1><?php echo $usr_realname ?></h1>
+<img class="margintop5px" src="<?php echo SITEROOT .'/assets/images/stars_'.$al_pic.'.png'; ?>" alt="<?php echo $usr_is; ?>" title="<?php echo $usr_is; ?>" /></div><?php echo $userAvatar; ?><h1><?php echo $usr_realname ?></h1>
 <p><?php echo '<strong>Username: </strong>' . $dbu_usr_username; ?><br />
 <?php 
 if ($dbu_usr_city || $dbu_usr_country) {
@@ -111,12 +111,12 @@ echo $dbu_usr_country;
 	$catdata = mysql_fetch_array($catdetails, MYSQL_BOTH);
 	extract($catdata, EXTR_PREFIX_ALL, "dbcat");
 echo '<div class="articleCompact">';
-echo '<span class="embiggen_box"><a class="embiggen" href="'.$siteroot.'/blog/'.strtolower($dbcat_categoryName).'/'.$permaLink.'">' . urldecode($articleTitle) .'</a></span>';
+echo '<span class="embiggen_box"><a class="embiggen" href="'.SITEROOT.'/blog/'.strtolower($dbcat_categoryName).'/'.$permaLink.'">' . urldecode($articleTitle) .'</a></span>';
 $numwords = 80; 
 preg_match("/([\S]+\s*){0,$numwords}/", $articleSummary, $regs); 
 $aricleShort = trim($regs[0]); 
 echo '<span>'.strip_tags($aricleShort).'...</span>';
-echo '  ( <a href="'.$siteroot.'/blog/'.strtolower($dbcat_categoryName).'/'.$permaLink.'">';
+echo '  ( <a href="'.SITEROOT.'/blog/'.strtolower($dbcat_categoryName).'/'.$permaLink.'">';
 echo 'View full article';
 echo '</a> )</div>';
 }?>
@@ -134,12 +134,12 @@ extract($getTitleArray, EXTR_PREFIX_ALL, "p");
 	$catdata = mysql_fetch_array($catdetails, MYSQL_BOTH);
 	extract($catdata, EXTR_PREFIX_ALL, "pcat");
 echo '<div class="articleCompact">';
-echo '<span class="embiggen_box"><strong>On article:</strong> <a class="embiggen" href="'.$siteroot.'/blog/'.strtolower($pcat_categoryName).'/'.$p_permaLink.'">' . urldecode($p_articleTitle) .'</a></span>';
+echo '<span class="embiggen_box"><strong>On article:</strong> <a class="embiggen" href="'.SITEROOT.'/blog/'.strtolower($pcat_categoryName).'/'.$p_permaLink.'">' . urldecode($p_articleTitle) .'</a></span>';
 $numwords = 40; 
 preg_match("/([\S]+\s*){0,$numwords}/", $commentDetail, $regs); 
 $commentShort = trim($regs[0]); 
 echo '<span>'.strip_tags($commentShort).'...</span>';
-echo '  ( <a href="'.$siteroot.'/blog/comments/'.strtolower($pcat_categoryName).'/'.$p_permaLink.'">';
+echo '  ( <a href="'.SITEROOT.'/blog/comments/'.strtolower($pcat_categoryName).'/'.$p_permaLink.'">';
 echo 'View full comment';
 echo '</a> )</div>';
 } 
@@ -149,5 +149,5 @@ if (!$commentCount) { echo '<div class="articleCompact"><span>User has not made 
 
 <?php
 //Main content ends here
-require_once('' . $serverroot . '/style/standard/footer.php');
+require_once('' . SERVERROOT . '/assets/style/standard/footer.php');
 ?>

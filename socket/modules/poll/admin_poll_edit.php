@@ -4,7 +4,7 @@
 $current_module = 14;
 
 require_once('../../templates/standard/socket_header.php'); ?>
-                 <p class="float_right button"> <a href="<?php echo $siteroot?>/socket/index.php">Discard</a></p>   <h1>Edit Poll </h1>
+                 <p class="float_right button"> <a href="<?php echo SITEROOT?>/socket/index.php">Discard</a></p>   <h1>Edit Poll </h1>
           <p>From here you can modify your existing polls</p>
           <?php
 // checks to see if the form has already been submitted
@@ -38,7 +38,7 @@ if ($posted) {
 	?>
 	<!-- javascript send message to menu -->
 <script language="JavaScript">
-      window.location.href = '<?php echo $socketroot ?>/modules/poll/admin_poll.php?message=' + <?php echo $message; ?>;
+      window.location.href = '<?php echo SOCKETROOT ?>/modules/poll/admin_poll.php?message=' + <?php echo $message; ?>;
 </script> <?php
 }
 ?>

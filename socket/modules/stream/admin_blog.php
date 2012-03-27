@@ -51,7 +51,7 @@ if ($_GET['tweet']) {
 	extract($catdata, EXTR_PREFIX_ALL, "dbcat");
 	
 // Takes the url of the article and converts it into a is.gd url
-	$longURL = $siteroot.'/stream/'.$dbcat_categoryName.'/'.$_GET['tweet'];
+	$longURL = SITEROOT.'/stream/'.$dbcat_categoryName.'/'.$_GET['tweet'];
 //	$shortURL =  get_isgd_url($longURL);
 	$shortURL =  'http://dfmag.me/s/'.$dbcat_categoryID.'x'.$tweet_articleID;
 	$status = $tweet_articleTitle.': '. $shortURL;
@@ -102,26 +102,26 @@ $userdata = mysql_query($userlookup) or die('<h3 style="color:red"> Local retrie
 $userdataArray = mysql_fetch_array($userdata, MYSQL_BOTH);
 extract($userdataArray, EXTR_PREFIX_ALL, "db");
 if ($db_usr_avatar) {
-	echo '<img src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$db_usr_avatar.'&amp;w=25&amp;h=25&amp;zc=c" title="Created by '.$db_usr_firstname.' '.$db_usr_surname.'" alt="'.$db_usr_username.'"/></td>';
+	echo '<img src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.$db_usr_avatar.'&amp;w=25&amp;h=25&amp;zc=c" title="Created by '.$db_usr_firstname.' '.$db_usr_surname.'" alt="'.$db_usr_username.'"/></td>';
 
 } else
 {
-	echo '<img src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src=' . $socketroot . '/modules/users/avatars/no_avatar.jpg&amp;w=20&amp;h=20&amp;zc=c" title="Created by '.$db_usr_firstname.' '.$db_usr_surname.'" alt="'.$db_usr_username.'"/></td>';
+	echo '<img src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src=' . SOCKETROOT . '/modules/users/avatars/no_avatar.jpg&amp;w=20&amp;h=20&amp;zc=c" title="Created by '.$db_usr_firstname.' '.$db_usr_surname.'" alt="'.$db_usr_username.'"/></td>';
 }
 if ($result['articlePosted'] != 1) { $draft = '<span style="color:red"> [Draft]</span>'; } else { $draft = ''; }
 echo '<td>&nbsp;' . html_entity_decode(stripslashes($result['articleTitle'])) . $draft .'</td>';
 
 // VIEW ARTICLE IN LIVE SITE
 echo '<td class="buttonCol">';
-echo '<a href="'.$siteroot.'/modules/stream/article.php?article='. $result['permaLink'].'"><img src="' . $siteroot . '/socket/elements/buttons/button_open.png"  title="View article on live site" /></a></td>';
+echo '<a href="'.SITEROOT.'/modules/stream/article.php?article='. $result['permaLink'].'"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_open.png"  title="View article on live site" /></a></td>';
 
 // (RE)TWEET ARTICLE
 if ($result['articlePosted'] == 1) {
 echo '<td class="buttonCol2">';
-echo '<a href="javascript:tweetContent(\''. $result['permaLink'].'\');"><img src="' . $siteroot . '/socket/elements/buttons/button_tweet.png"  title="Submit this article to Twitter" /></a></td>';
+echo '<a href="javascript:tweetContent(\''. $result['permaLink'].'\');"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_tweet.png"  title="Submit this article to Twitter" /></a></td>';
 } else {
 	echo '<td class="deadCol">';
-echo '<img src="' . $siteroot . '/socket/elements/buttons/off_button_tweet.png"  title="You cannot tweet a draft article" /></td>';
+echo '<img src="' . SITEROOT . '/socket/assets/images/buttons/off_button_tweet.png"  title="You cannot tweet a draft article" /></td>';
 }
 // SHOW COMMENTS
 echo '<td ';
@@ -139,13 +139,13 @@ if ($numcomments == 0) { echo 'class="deadCol"';}
 echo '>';
 if ($numcomments == 0) {$comnum = '0'; } else if ($numcomments >= 1 && $numcomments <= 20) { $comnum = $numcomments; } else { $comnum = '20plus'; }
 if ($numcomments != 0) { echo '<a href="admin_stream_comments.php?ID='. $result['articleID'].'">'; }
-echo '<img src="' . $siteroot . '/socket/elements/buttons/comments/comment_'.$comnum.'.png"  title="View '.$numcomments.' Comments" />';
+echo '<img src="' . SITEROOT . '/socket/assets/images/buttons/comments/comment_'.$comnum.'.png"  title="View '.$numcomments.' Comments" />';
 if ($numcomments != 0) { echo '</a>';}
 echo '</td>';
 
 // EDIT ARTICLES
 echo '<td class="buttonCol2">';
-echo '<a href="admin_stream_edit.php?ID='. $result['articleID'].'"><img src="' . $siteroot . '/socket/elements/buttons/button_edit.png"  title="Edit Article" /></a></td>';
+echo '<a href="admin_stream_edit.php?ID='. $result['articleID'].'"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_edit.png"  title="Edit Article" /></a></td>';
 
 // SHOW REVISIONS
 // First check to see if there are any revisions
@@ -153,19 +153,19 @@ $revisioncheck = mysql_query("SELECT revisionID FROM module_stream_revisions WHE
 $revisioncount = mysql_num_rows($revisioncheck); // Checks how many revisions each post has
 if ($revisioncount == 0) {
 echo '<td class="deadCol">';
-echo '<img src="' . $siteroot . '/socket/elements/buttons/button_view_menus.png"  title="This article has no revisions" /></td>';
+echo '<img src="' . SITEROOT . '/socket/assets/images/buttons/button_view_menus.png"  title="This article has no revisions" /></td>';
 } else {
 echo '<td class="buttonCol">';	
-echo '<a href="admin_stream_revisions.php?ID='. $result['articleID'].'"><img src="' . $siteroot . '/socket/elements/buttons/button_view_menus.png"  title="View Revisions" /></a></td>';
+echo '<a href="admin_stream_revisions.php?ID='. $result['articleID'].'"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_view_menus.png"  title="View Revisions" /></a></td>';
 }
 // DELETE ARTICLES
 if ($_SESSION['usr_access_lvl'] <= 2) // If user is a site admin then let them delete articles
 	{
 	echo '<td class="buttonCol2">';
-	echo '<a href="javascript:deleteContent(\''. $result['articleID'].'\');"><img src="' . $siteroot . '/socket/elements/buttons/button_delete.png"  title="Delete Article" /></a></td>';
+	echo '<a href="javascript:deleteContent(\''. $result['articleID'].'\');"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_delete.png"  title="Delete Article" /></a></td>';
 } else { // if they are not then display a greyed out button
 		echo '<td class="deadCol" width="20" align="center">';
-		echo '<img src="' . $siteroot . '/socket/elements/buttons/off_button_delete.png"  alt="Cannot Delete Page" /></td>'; }
+		echo '<img src="' . SITEROOT . '/socket/assets/images/buttons/off_button_delete.png"  alt="Cannot Delete Page" /></td>'; }
 echo '  </tr>';
 };
 	

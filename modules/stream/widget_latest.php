@@ -1,7 +1,7 @@
 <h1> Latest Articles </h1>
 <?php 
 if ($devMode != 1) { // Add a google adSense banner
-require_once($serverroot.'/modules/adsense/widget_banner.php');
+require_once(SERVERROOT.'/modules/adsense/widget_banner.php');
 }
 $streamCounter = mysql_query("SELECT COUNT(*) AS total_entries FROM module_stream WHERE articlePosted =1") or die(mysql_error()); $row = mysql_fetch_row($streamCounter); $total_entries = $row[0];
 if(isset($_GET['page_number'])) { $page_number = $_GET['page_number']; } else { $page_number = 1; } 
@@ -28,26 +28,26 @@ extract($userdataArray, EXTR_PREFIX_ALL, "db");
 $postTimestamp = convert_datetime($datePosted);
 $cleanDatePosted = date( 'l, j M Y', $postTimestamp);
 if ($db_usr_avatar){
-$userAvatar = '<img class="previewuserAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$db_usr_avatar.'&amp;w=90&amp;h=90&amp;zc=c" alt="'.$db_usr_firstname.' '.$db_usr_surname.'\'s profile picture"/>';
+$userAvatar = '<img class="previewuserAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.$db_usr_avatar.'&amp;w=90&amp;h=90&amp;zc=c" alt="'.$db_usr_firstname.' '.$db_usr_surname.'\'s profile picture"/>';
 } else {
-$userAvatar = '<img class="userAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$serverroot.'/socket/modules/users/avatars/no_avatar.jpg&amp;w=90&amp;h=90&amp;zc=c" title="User does not have a profile picture"/>';	
+$userAvatar = '<img class="userAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.SERVERROOT.'/socket/modules/users/avatars/no_avatar.jpg&amp;w=90&amp;h=90&amp;zc=c" title="User does not have a profile picture"/>';	
 }
 if ($articleImage) {
 	if (!$articleImagePos) { $articleImagePos = 'C'; }
-$articleThumb = '<img class="previewuserAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$articleImage.'&amp;w=90&amp;h=90&amp;zc='.$articleImagePos.'" title="'.urldecode($articleTitle).'" alt="'.articleImageAlt.'"/>';
+$articleThumb = '<img class="previewuserAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.$articleImage.'&amp;w=90&amp;h=90&amp;zc='.$articleImagePos.'" title="'.urldecode($articleTitle).'" alt="'.articleImageAlt.'"/>';
 } else {
 $articleThumb = $userAvatar;
 }
-$authorLink = $siteroot.'/users/'.$db_usr_username;
+$authorLink = SITEROOT.'/users/'.$db_usr_username;
 
 if ($anum != $cnum) {
 echo '<div class="fpSeperator">';
 } else {
 echo '<div>';	
 }
-echo '<div class="previewHeader"><a href="'.$siteroot.'/stream/'.strtolower($dbcat_categoryName).'/'.$permaLink.'">' . $articleThumb . '</a><h2><a href="'.$siteroot.'/stream/'.strtolower($dbcat_categoryName).'/'.$permaLink.'">' . stripslashes(html_entity_decode($articleTitle)) . '</a></h2></div>';
+echo '<div class="previewHeader"><a href="'.SITEROOT.'/stream/'.strtolower($dbcat_categoryName).'/'.$permaLink.'">' . $articleThumb . '</a><h2><a href="'.SITEROOT.'/stream/'.strtolower($dbcat_categoryName).'/'.$permaLink.'">' . stripslashes(html_entity_decode($articleTitle)) . '</a></h2></div>';
 echo '<div class="previewSummary">' . stripslashes($articleSummary).'</div>';
-echo '<p>By <a href="'.$authorLink.'">'.$db_usr_firstname.' '.$db_usr_surname.'</a> | <a href="'.$siteroot.'/stream/'.strtolower($dbcat_categoryName).'">'. $dbcat_categoryName .'</a> | '.$cleanDatePosted.'</p>';
+echo '<p>By <a href="'.$authorLink.'">'.$db_usr_firstname.' '.$db_usr_surname.'</a> | <a href="'.SITEROOT.'/stream/'.strtolower($dbcat_categoryName).'">'. $dbcat_categoryName .'</a> | '.$cleanDatePosted.'</p>';
 echo '</div>';
 };
 // Display Pagination

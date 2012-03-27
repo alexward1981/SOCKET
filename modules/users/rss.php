@@ -26,17 +26,17 @@ $output = "<?xml version=\"1.0\"?>
             <rss version=\"2.0\">
                 <channel>
                     <title>".$usr_realname." @ ".$sc_sitename."</title>
-                    <link>".$siteroot."/socket/modules/".$modfolder."/rss.php</link>
+                    <link>".SITEROOT."/socket/modules/".$modfolder."/rss.php</link>
 					<description>".$sc_meta_desc ."</description>
                     <language>en-us</language>
                     <pubDate>$now</pubDate>
                     <lastBuildDate>$now</lastBuildDate>
-                    <docs>".$siteroot."</docs>
+                    <docs>".SITEROOT."</docs>
                     <managingEditor>".$sc_email."</managingEditor>
 					<image> 
 						<title>".$sc_sitename."</title>
-						<url>".$siteroot."/elements/logo.png</url>
-						<link>".$siteroot."</link>
+						<url>".SITEROOT."/assets/images/logo.png</url>
+						<link>".SITEROOT."</link>
 					</image>
 					\n";
             
@@ -49,7 +49,7 @@ foreach ($return as $line)
 	extract($catdata, EXTR_PREFIX_ALL, "dbcat");
     $output .= "<item>\n";
 	$output .= "	<title>".urldecode(stripslashes($line['articleTitle']))."</title>
-	<link>".$siteroot."/modules/".$modfolder."/article.php?cat=".$dbcat_categoryName."&amp;article=".urlencode($line['articleTitle'])."</link>
+	<link>".SITEROOT."/modules/".$modfolder."/article.php?cat=".$dbcat_categoryName."&amp;article=".urlencode($line['articleTitle'])."</link>
 	<description>".htmlentities(strip_tags($line['articleSummary']))."</description>
 </item>\n\n";
 }

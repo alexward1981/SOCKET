@@ -4,8 +4,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/socket/globals.php');
 
 $meta_title = "Search $sc_sitename";
 $meta_description = "Search $sc_sitename";
-require_once($serverroot. '/style/standard/head.php');
-require_once($serverroot. '/style/standard/header.php');
+require_once(SERVERROOT. '/assets/style/standard/head.php');
+require_once(SERVERROOT. '/assets/style/standard/header.php');
 //Main content starts here 
 if($_POST['searchField'] || $_GET['search']) {
 		if ($_POST['searchField']) { $search=$_POST['searchField'];}
@@ -38,24 +38,24 @@ if($_POST['searchField'] || $_GET['search']) {
 				$postTimestamp = convert_datetime($datePosted);
 				$cleanDatePosted = date( 'l, j M Y', $postTimestamp);
 if ($db_usr_avatar){
-$userAvatar = '<img class="previewuserAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$db_usr_avatar.'&amp;w=90&amp;h=90&amp;zc=c" alt="'.$db_usr_firstname.' '.$db_usr_surname.'\'s profile picture"/>';
+$userAvatar = '<img class="previewuserAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.$db_usr_avatar.'&amp;w=90&amp;h=90&amp;zc=c" alt="'.$db_usr_firstname.' '.$db_usr_surname.'\'s profile picture"/>';
 } else {
-$userAvatar = '<img class="userAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$serverroot.'/socket/modules/users/avatars/no_avatar.jpg&amp;w=90&amp;h=90&amp;zc=c" title="User does not have a profile picture"/>';	
+$userAvatar = '<img class="userAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.SERVERROOT.'/socket/modules/users/avatars/no_avatar.jpg&amp;w=90&amp;h=90&amp;zc=c" title="User does not have a profile picture"/>';	
 }
 if ($articleImage) {
-$articleThumb = '<img class="previewuserAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$articleImage.'&amp;w=90&amp;h=90&amp;zc=c" title="'.urldecode($articleTitle).'" alt="'.articleImageAlt.'"/>';
+$articleThumb = '<img class="previewuserAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.$articleImage.'&amp;w=90&amp;h=90&amp;zc=c" title="'.urldecode($articleTitle).'" alt="'.articleImageAlt.'"/>';
 } else {
 $articleThumb = $userAvatar;
 }
-					$authorLink = $siteroot.'/users/'.$db_usr_username;
+					$authorLink = SITEROOT.'/users/'.$db_usr_username;
 					if ($anum != $cnum) {
 						echo '<div class="fpSeperator">';
 					} else {
 						echo '<div>';	
 					}
-					echo '<div class="previewHeader"><a href="'.$siteroot.'/blog/'.strtolower($dbcat_categoryName).'/'.$permaLink.'">' . $articleThumb . '</a><h2><a href="'.$siteroot.'/blog/'.strtolower($dbcat_categoryName).'/'.$permaLink.'">' . stripslashes(html_entity_decode($articleTitle)) . '</a></h2></div>';
+					echo '<div class="previewHeader"><a href="'.SITEROOT.'/blog/'.strtolower($dbcat_categoryName).'/'.$permaLink.'">' . $articleThumb . '</a><h2><a href="'.SITEROOT.'/blog/'.strtolower($dbcat_categoryName).'/'.$permaLink.'">' . stripslashes(html_entity_decode($articleTitle)) . '</a></h2></div>';
 					echo '<div class="previewSummary">' . stripslashes($articleSummary).'</div>';
-					echo '<p>By <a href="'.$authorLink.'">'.$db_usr_firstname.' '.$db_usr_surname.'</a> | <a href="'.$siteroot.'/blog/'.strtolower($dbcat_categoryName).'">'. $dbcat_categoryName .'</a> | '.$cleanDatePosted.'</p>';
+					echo '<p>By <a href="'.$authorLink.'">'.$db_usr_firstname.' '.$db_usr_surname.'</a> | <a href="'.SITEROOT.'/blog/'.strtolower($dbcat_categoryName).'">'. $dbcat_categoryName .'</a> | '.$cleanDatePosted.'</p>';
 					echo '</div>';
 			} 
 			// Display Pagination
@@ -74,5 +74,5 @@ echo '<li><a class="pagination" href="'.$_SERVER['SCRIPT_NAME'].'?search='.$sear
 } else { echo '<div class="failure"><strong>No results</strong><p>You cannot access this page directly</p></div>';
 }
 //Main content ends here
-require_once($serverroot. '/style/standard/footer.php');
+require_once(SERVERROOT. '/assets/style/standard/footer.php');
 ?>

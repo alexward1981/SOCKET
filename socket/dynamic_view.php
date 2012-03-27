@@ -16,7 +16,7 @@ while(list($dynamicID, $userID, $title, $content) = mysql_fetch_array($data, MYS
 <h3> <?php echo "Viewing: " . $title; ?>&nbsp;(<a href="dynamic_edit.php?ID=<?php echo $dynamicID; ?>">Edit</a>)</h3>
 <p><strong><?php echo 'Current Page ID = ' . $pageID; ?></strong></p>
 <p><strong>Body Text</strong></p>
-<p><?php echo preg_replace("/<img[^>]+\>/i", "<img src=\"" .$siteroot."/socket/elements/image_placeholder.png\" class=\"image_left\" />", $content) ?></p>
+<p><?php echo preg_replace("/<img[^>]+\>/i", "<img src=\"" .SITEROOT."/socket/assets/images/image_placeholder.png\" class=\"image_left\" />", $content) ?></p>
 
 <?PHP
 };

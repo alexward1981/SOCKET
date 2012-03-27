@@ -17,16 +17,16 @@ $meta_description = "$meta_desc";
 $title = "$article_title";
 $body = "$article_body";
 };
-require_once('' . $serverroot . '/style/standard/head.php');
-require_once('' . $serverroot . '/style/standard/head2.php');
-require_once('style/standard/header.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head2.php');
+require_once('/assets/style/standard/header.php');
 //Main content starts here 
 // Selects the title and description fields from the contents table
 $dblookup2 = "SELECT pageID, articleTitle, articleBody FROM core_content WHERE(core_content.pageID = '$pageID')";
 $data2 = mysql_query($dblookup2) or die('Failed to return data: ' . mysql_error());
 while($result = mysql_fetch_array($data2))
 {
-if (isset($_SESSION['userID']) && $_SESSION['usr_access_lvl'] <= 3) {echo '<p class="socket_action_button"> <a href="'.$siteroot.'/socket/pages_edit.php?ID='.$result['pageID'].'"><img src="' . $siteroot . '/socket/elements/buttons/button_edit.png" width="15" height="15" alt="Edit Page" /></a></span>';}
+if (isset($_SESSION['userID']) && $_SESSION['usr_access_lvl'] <= 3) {echo '<p class="socket_action_button"> <a href="'.SITEROOT.'/socket/pages_edit.php?ID='.$result['pageID'].'"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_edit.png" width="15" height="15" alt="Edit Page" /></a></span>';}
 
 echo '<h1>' . stripslashes($result['articleTitle']) . '</h1>';
 echo '<div id="bodytext">';
@@ -34,5 +34,5 @@ echo stripslashes($result['articleBody']);
 echo '</div>';
 } 
 //Main content ends here
-require_once('style/standard/footer.php');
+require_once('/assets/style/standard/footer.php');
 ?>

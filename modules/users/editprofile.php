@@ -6,12 +6,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/socket/globals.php'); // Selects the 
 	$meta_title ='Register a new ' . $sc_sitename .' account';
 	$meta_keywords = "$meta_key";
 	$meta_description = $sc_sitename . '\'s list of users';
-	$special_crumb = '<a href="'. $siteroot . '/modules/users/users.php">'.users.'</a>';
+	$special_crumb = '<a href="'. SITEROOT . '/modules/users/users.php">'.users.'</a>';
 	$mceInit = 1;	//Activates TinyMCE
 // imports header information
-require_once('' . $serverroot . '/style/standard/head.php');
-require_once('' . $serverroot . '/style/standard/head2.php');
-require_once('' . $serverroot . '/style/standard/header.php'); ?>
+require_once('' . SERVERROOT . '/assets/style/standard/head.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head2.php');
+require_once('' . SERVERROOT . '/assets/style/standard/header.php'); ?>
 <h1> Edit your Account Settings</h1>
 <?php
 // checks to see if the form has already been submitted
@@ -21,7 +21,7 @@ if (!empty($_FILES['usr_avatar']))
 			$filetype = $_FILES['usr_avatar']['type'];
 			if($filetype == 'image/jpeg' || $filetype == 'image/jpg' || $filetype == 'image/gif' || $filetype == 'image/png') 
 				{
-			$db_usr_avatar= $serverroot .'/socket/modules/users/avatars/' . date(U) . $_FILES['usr_avatar']['name'];
+			$db_usr_avatar= SERVERROOT .'/socket/modules/users/avatars/' . date(U) . $_FILES['usr_avatar']['name'];
 			move_uploaded_file($_FILES['usr_avatar']['tmp_name'], $db_usr_avatar);
 				}
 			}
@@ -72,7 +72,7 @@ $usernameTaken = 'This username has already been taken';
 }
 
 //Performs the Captcha
- require_once($serverroot . '/Scripts/recaptchalib.php');
+ require_once(SERVERROOT . '/assets/scripts/recaptchalib.php');
  $privatekey = "6Ld5pgsAAAAAAO19vVx1p-Nl8Cwc-G81k3bxi5hc";
  $resp = recaptcha_check_answer ($privatekey,
                                $_SERVER["REMOTE_ADDR"],
@@ -118,7 +118,7 @@ $posted = mysql_query($dbinsert) or die($message = '<div class="failure"><strong
 
 if ($posted) { ?>
 <div class="success"><strong>Success!</strong> <p>Your account has been updated</p></div>
-<?php require_once('' . $serverroot . '/style/standard/footer.php');
+<?php require_once('' . SERVERROOT . '/assets/style/standard/footer.php');
 exit();
 }
 
@@ -235,7 +235,7 @@ extract($userArray, EXTR_PREFIX_ALL, "db");
 	 } else {
 	echo '<label class="normal" for="recaptcha_challenge_field">Are you human? </label>';
 	} 
- require_once($serverroot . '/Scripts/recaptchalib.php');
+ require_once(SERVERROOT . '/assets/scripts/recaptchalib.php');
  $publickey = "6Ld5pgsAAAAAAAwm1Owe8LN-ZYqcdZJXfXXx8Ve8"; // you got this from the signup page
  echo recaptcha_get_html($publickey);
   ?>
@@ -245,5 +245,5 @@ extract($userArray, EXTR_PREFIX_ALL, "db");
 
 <?php
 //Main content ends here
-require_once('' . $serverroot . '/style/standard/footer.php');
+require_once('' . SERVERROOT . '/assets/style/standard/footer.php');
 ?>

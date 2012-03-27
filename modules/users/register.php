@@ -6,18 +6,18 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/socket/globals.php'); // Selects the 
 	$meta_title ='Register a new ' . $sc_sitename .' account';
 	$meta_keywords = "$meta_key";
 	$meta_description = $sc_sitename . '\'s list of users';
-	$special_crumb = '<a href="'. $siteroot . '/modules/users/users.php">'.users.'</a>';
+	$special_crumb = '<a href="'. SITEROOT . '/modules/users/users.php">'.users.'</a>';
 	$regOpen = 1; // If set to '0' no new users will be able to sign up
 	$mceInit = 1;	//Activates TinyMCE
 // imports header information
-require_once('' . $serverroot . '/style/standard/head.php');
-require_once('' . $serverroot . '/style/standard/head2.php');
-require_once('' . $serverroot . '/style/standard/header.php'); ?>
+require_once('' . SERVERROOT . '/assets/style/standard/head.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head2.php');
+require_once('' . SERVERROOT . '/assets/style/standard/header.php'); ?>
 
 <?php if (!$regOpen) {
 echo '<h1> Registrations Closed</h1>';
 echo '<p>At present we are not accepting new registrations, please check back soon</p>';
-require_once('' . $serverroot . '/style/standard/footer.php');
+require_once('' . SERVERROOT . '/assets/style/standard/footer.php');
 exit();
 } 
 ?>
@@ -32,7 +32,7 @@ if (!empty($_FILES['usr_avatar']))
 			$filetype = $_FILES['usr_avatar']['type'];
 			if($filetype == 'image/jpeg' || $filetype == 'image/jpg' || $filetype == 'image/gif' || $filetype == 'image/png') 
 				{
-			$db_usr_avatar= $serverroot .'/socket/modules/users/avatars/' . date(U) . $_FILES['usr_avatar']['name'];
+			$db_usr_avatar= SERVERROOT .'/socket/modules/users/avatars/' . date(U) . $_FILES['usr_avatar']['name'];
 			move_uploaded_file($_FILES['usr_avatar']['tmp_name'], $db_usr_avatar);
 				}
 			}
@@ -84,7 +84,7 @@ $usernameTaken = 'This username has already been taken';
 }
 
 //Performs the Captcha
- require_once($serverroot . '/Scripts/recaptchalib.php');
+ require_once(SERVERROOT . '/assets/scripts/recaptchalib.php');
  $privatekey = "6Ld5pgsAAAAAAO19vVx1p-Nl8Cwc-G81k3bxi5hc";
  $resp = recaptcha_check_answer ($privatekey,
                                $_SERVER["REMOTE_ADDR"],
@@ -115,20 +115,20 @@ if ($posted) {
 	// If the user is posted send the activation email
 	$em_to      = $db_usr_email;
 	$em_subject = " Activate your " .$sc_sitename. " Account";
-	$em_message = "Welcome to ".$sc_sitename." \n \n You, or someone using your email address, has completed registration at ".$siteroot.". You can complete registration by clicking the following link: \n ".$siteroot."/modules/users/activate.php?".$activationKey." \n \n If this is an error, please ignore this email. \n \n Regards, \n The " .$sc_sitename. " team \n \n Note: Please do not reply to this email. We will not receive it";
+	$em_message = "Welcome to ".$sc_sitename." \n \n You, or someone using your email address, has completed registration at ".SITEROOT.". You can complete registration by clicking the following link: \n ".SITEROOT."/modules/users/activate.php?".$activationKey." \n \n If this is an error, please ignore this email. \n \n Regards, \n The " .$sc_sitename. " team \n \n Note: Please do not reply to this email. We will not receive it";
 
-$em_headers = 'From: noreply@'.str_replace('http://www.', '', $siteroot). "\r\n" .
+$em_headers = 'From: noreply@'.str_replace('http://www.', '', SITEROOT). "\r\n" .
 
-    'Reply-To: noreply@'.str_replace('http://www.', '', $siteroot). "\r\n" .
+    'Reply-To: noreply@'.str_replace('http://www.', '', SITEROOT). "\r\n" .
 
     'X-Mailer: PHP/' . phpversion();
 
 mail($em_to, $em_subject, $em_message, $em_headers);
 ?>
 <div class="success"><strong>Success!</strong> <p>You are now registered</p></div>
-<p> You will soon receive an activation email, please follow the instructions to activate your account. If you do not receive the email don't forget to check your spam folder. If it is still not there then please <a href="<?php echo $siteroot ?>/contactus.php">let us know </a> and we'll sort you out</p>
+<p> You will soon receive an activation email, please follow the instructions to activate your account. If you do not receive the email don't forget to check your spam folder. If it is still not there then please <a href="<?php echo SITEROOT ?>/contactus.php">let us know </a> and we'll sort you out</p>
 
-<?php require_once('' . $serverroot . '/style/standard/footer.php');
+<?php require_once('' . SERVERROOT . '/assets/style/standard/footer.php');
 exit();
 }
 
@@ -242,7 +242,7 @@ exit();
 	 } else {
 	echo '<label class="normal" for="recaptcha_response_field">Are you human? </label>';
 	} 
- require_once($serverroot . '/Scripts/recaptchalib.php');
+ require_once(SERVERROOT . '/assets/scripts/recaptchalib.php');
  $publickey = "6Ld5pgsAAAAAAAwm1Owe8LN-ZYqcdZJXfXXx8Ve8"; // you got this from the signup page
  echo recaptcha_get_html($publickey);
   ?>
@@ -252,5 +252,5 @@ exit();
 
 <?php
 //Main content ends here
-require_once('' . $serverroot . '/style/standard/footer.php');
+require_once('' . SERVERROOT . '/assets/style/standard/footer.php');
 ?>

@@ -38,7 +38,7 @@ elseif (!empty($_POST['submit']))
 	$db_filetype = $_FILES['usr_avatar']['type'];
 	if($db_filetype == 'image/jpeg' || $db_filetype == 'image/jpg' ||  $db_filetype == 'image/gif' || $db_filetype == 'image/png') 
 				{
-				$db_usr_avatar= $serverroot .'/socket/modules/users/avatars/' . date(U). $_FILES['usr_avatar']['name'];
+				$db_usr_avatar= SERVERROOT .'/socket/modules/users/avatars/' . date(U). $_FILES['usr_avatar']['name'];
 				move_uploaded_file($_FILES['usr_avatar']['tmp_name'], $db_usr_avatar);
 				}
 		
@@ -78,7 +78,7 @@ if ($posted)
 	?>
 	<!-- javascript send message to menu -->
 <script language="JavaScript">
-      window.location.href = '<?php echo $socketroot ?>/modules/users/admin_users.php?message=' + <?php echo $message; ?>;
+      window.location.href = '<?php echo SOCKETROOT ?>/modules/users/admin_users.php?message=' + <?php echo $message; ?>;
 </script>
 
 <?php 

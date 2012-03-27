@@ -2,7 +2,7 @@
 <?php require_once($_SERVER['DOCUMENT_ROOT'] . '/socket/globals.php'); // If the user is already logged in, bypass the form.
 $prevPage = $_GET['r'];
 if (isset($_SESSION['userID'])) {
-	redirect_to("{$siteroot}$prevPage");
+	redirect_to("{SITEROOT}$prevPage");
 }
 if (isset($_GET['loggedout']) && $_GET['loggedout'] == 1) {
 		$message = '<div class="success"><strong>Logout Successful</strong><p> You have sucessfully logged out </p></div>'; 
@@ -33,13 +33,13 @@ if($fb_user) {
 		$usr_check_in = "UPDATE core_users SET usr_logged_in = 1 WHERE userID =" . $_SESSION['userID'];
 		mysql_query($usr_check_in) or die('<h3 class="error"> Update Failed! </h3>' . mysql_error());
     	//After setting session values, forward them off to the Logged in User page.
-	redirect_to("{$siteroot}$prevPage");
+	redirect_to("{SITEROOT}$prevPage");
 	} else {
 		//user is logged into FB and has authorized yoursite.com for connect. But
 		//we don't have their fb_user id stored on yoursite.com database yet.		
 		//so send them to the Connect Account page so they can either link up with an 
 		//existing account or create a new one.
-	redirect_to("{$siteroot}/modules/users/fbconnect.php");
+	redirect_to("{SITEROOT}/modules/users/fbconnect.php");
 	}
 }
 
@@ -104,7 +104,7 @@ if (!empty($_POST['submit'])) {
 							$logged = mysql_query($logthis) or die($message = '<h3 style="color:red"> Insertion Failed! </h3>' . mysql_error());
 							$usr_check_in = "UPDATE core_users SET usr_logged_in = 1 WHERE userID =" . $_SESSION['userID'];
 							mysql_query($usr_check_in) or die('<h3 class="error"> Update Failed! </h3>' . mysql_error());
-							redirect_to("{$siteroot}$prevPage");
+							redirect_to("{SITEROOT}$prevPage");
 							} else {
 							$loggedin = 0;
 							$message = '<div class="failure"><strong>User not active</strong><p>Your account has not been activated </p></div>';
@@ -125,9 +125,9 @@ if ($loggedin == 0) {
 	$regOpen = 0;
 	$loginPage =1;
 // imports header information
-require_once('' . $serverroot . '/style/standard/head.php');
-require_once('' . $serverroot . '/style/standard/head2.php');
-require_once('' . $serverroot . '/style/standard/header.php'); ?>
+require_once('' . SERVERROOT . '/assets/style/standard/head.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head2.php');
+require_once('' . SERVERROOT . '/assets/style/standard/header.php'); ?>
 
 <h1> Welcome to <?php echo $sc_sitename ?></h1>
 <h2> Login Directly:</h2>
@@ -162,7 +162,7 @@ echo $message;
 
   <fb:login-button v="2" size="large" onlogin="window.location.reload(true);">Login using Facebook Connect</fb:login-button>
 <h2> Don't have an account? Register Now</h2>
-<p> <a class="regButton" href="<?php echo $siteroot ?>/register.php">Click here to register with us</a> or click the button below to register instantly using your Facebook account </p><br />
+<p> <a class="regButton" href="<?php echo SITEROOT ?>/register.php">Click here to register with us</a> or click the button below to register instantly using your Facebook account </p><br />
 
   <fb:login-button v="2" size="large" onlogin="window.location.reload(true);">Register instantly with Facebook</fb:login-button>
 
@@ -172,5 +172,5 @@ echo $message;
 <?php
 }
 //Main content ends here
-require_once('' . $serverroot . '/style/standard/footer.php');
+require_once('' . SERVERROOT . '/assets/style/standard/footer.php');
 ?>

@@ -29,7 +29,7 @@ while(list($streamID, $userID, $streamTitle, $streamBody) = mysql_fetch_array($d
 ?></p>
 <p><strong><?php echo 'Current Article ID = ' . $streamID; ?></strong></p></div>
 <p><strong>Body Text</strong></p>
-<p><?php echo preg_replace("/<img[^>]+\>/i", "<img src=\"" .$siteroot."/socket/elements/image_placeholder.png\" class=\"image_left\" />", $streamBody) ?></p>
+<p><?php echo preg_replace("/<img[^>]+\>/i", "<img src=\"" .SITEROOT."/socket/assets/images/image_placeholder.png\" class=\"image_left\" />", $streamBody) ?></p>
 
 <?PHP
 };

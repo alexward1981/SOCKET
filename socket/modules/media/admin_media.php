@@ -52,15 +52,15 @@ $searchrows = mysql_num_rows($data);
 echo '	<tr>';
 echo '    <td>' . $result["fileTitle"]. '</td>';
 echo '    <td class="buttons" width="32"  align="center">';
-echo '    <a href="admin_media_view.php?ID='. $result["fileID"].'"><img src="' . $siteroot . '/socket/elements/buttons/button_open.png" width="32" height="32" alt="Open Page" /></a></td>';
+echo '    <a href="admin_media_view.php?ID='. $result["fileID"].'"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_open.png" width="32" height="32" alt="Open Page" /></a></td>';
 // Admin switch yet to add
 //if ($result["dynamicID"] > $static_pages)
 	//{
 	echo '<td class="buttons" width="32" align="center">';
-	echo '<a href="javascript:deleteContent(\''. $result["fileID"].'\');"><img src="' . $siteroot . '/socket/elements/buttons/button_delete.png" width="32" height="32" alt="Delete Page" /></a></td>';
+	echo '<a href="javascript:deleteContent(\''. $result["fileID"].'\');"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_delete.png" width="32" height="32" alt="Delete Page" /></a></td>';
 /*} else { 
 		echo '<td width="28" class="deadcol" align="center">';
-		echo '<img src="' . $siteroot . '/socket/elements/buttons/off_button_delete.png" width="32" height="32" alt="Cannot Delete Page" /></td>'; }*/
+		echo '<img src="' . SITEROOT . '/socket/assets/images/buttons/off_button_delete.png" width="32" height="32" alt="Cannot Delete Page" /></td>'; }*/
 echo '  </tr>';
 		
     		};

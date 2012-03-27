@@ -67,7 +67,7 @@ if ($tweetCount != $t) {
 			$twitterPics = mysql_query("SELECT usr_avatar FROM core_users WHERE usr_twitter = '".$clean_lower_user."'");
 			list($usr_avatar) = mysql_fetch_array($twitterPics, MYSQL_NUM);
 				?>
-<div class="tweet noPrint"><a href="http://www.twitter.com/<?php echo $clean_lower_user; ?>"><img src="<?php echo $siteroot ?>/Scripts/phpThumb/phpThumb.php?src=<?php echo $usr_avatar ?>&amp;w=40&amp;h=40&amp;zc=c" title="View <?php echo $clean_lower_user; ?>'s profile" alt="<?php echo $clean_lower_user; ?>'s profile picture" /></a><span><?php echo $clean_content[0]; ?></span></div>
+<div class="tweet noPrint"><a href="http://www.twitter.com/<?php echo $clean_lower_user; ?>"><img src="<?php echo SITEROOT ?>/assets/scripts/timthumb/timthumb.php?src=<?php echo $usr_avatar ?>&amp;w=40&amp;h=40&amp;zc=c" title="View <?php echo $clean_lower_user; ?>'s profile" alt="<?php echo $clean_lower_user; ?>'s profile picture" /></a><span><?php echo $clean_content[0]; ?></span></div>
 <?php }
 	} else { // if there aren't any tweets
 		?>

@@ -22,5 +22,5 @@ mysql_close($conn);
 mysql_close($globalconn);
 ?>
 <script language="JavaScript">
-      window.location.href = '<?php echo $socketroot ?>/login.php?loggedout=1';
+      window.location.href = '<?php echo SOCKETROOT ?>/login.php?loggedout=1';
 </script>

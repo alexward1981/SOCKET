@@ -23,15 +23,15 @@ $mceInit = 1;	//Activates TinyMCE
 	$catdata = mysql_fetch_array($catdetails, MYSQL_BOTH);
 	extract($catdata, EXTR_PREFIX_ALL, "dbcat");
 if ($_GET['short'] == 1) { redirect_to($mainURL."/stream/".strtolower($dbcat_categoryName)."/".$permaLink); }
-$special_crumb = '<a href="'. $siteroot . '/stream/'.$dbcat_categoryName.'">'.$dbcat_categoryName.'</a>';
+$special_crumb = '<a href="'. SITEROOT . '/stream/'.$dbcat_categoryName.'">'.$dbcat_categoryName.'</a>';
 // Insert the header information
-require_once('' . $serverroot . '/style/standard/head.php');
-require_once('' . $serverroot . '/style/standard/head2.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head2.php');
 // Create a hidden thumbnail of the article image for Social sharing sites
 if (!$articleImagePos) { $articleImagePos = 'c'; }
 //echo '<meta name="title" content="'.$articleTitle.'" />';
-echo '<link rel="image_src" href="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?w=100&h=100&zc='.$articleImagePos.'&src='.$articleImage.'" />';
-require_once('' . $serverroot . '/style/standard/header.php');
+echo '<link rel="image_src" href="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?w=100&h=100&zc='.$articleImagePos.'&src='.$articleImage.'" />';
+require_once('' . SERVERROOT . '/assets/style/standard/header.php');
 $postTimestamp = convert_datetime($datePosted);
 $cleanDatePosted = date( 'l, j M Y', $postTimestamp);
 
@@ -41,17 +41,17 @@ $commentCount = mysql_num_rows($getComments);
 /****************************/
 /*    Page starts here 		*/
 /****************************/
-//echo '<img class="hidden" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$siteroot.'/Scripts/phpThumb/phpThumb.php?w=100&h=100&zc='.$articleImagePos.'&src='.$articleImage.'" />';
+//echo '<img class="hidden" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.SITEROOT.'/assets/scripts/timthumb/timthumb.php?w=100&h=100&zc='.$articleImagePos.'&src='.$articleImage.'" />';
 
 // checks the databases and returns the authors avatar if one exists.
 $userlookup = "SELECT usr_firstname, usr_surname, usr_username, usr_avatar FROM core_users WHERE userID =" . $articleAuthor;
 $userdata = mysql_query($userlookup) or die('<h3 style="color:red"> Local retrieval Failed! </h3>' . mysql_error());	
 $userdataArray = mysql_fetch_array($userdata, MYSQL_BOTH);
 extract($userdataArray, EXTR_PREFIX_ALL, "db");
-$userAvatar = '<img class="userAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$db_usr_avatar.'&amp;w=90&amp;h=90&amp;zc=c" alt="'.$db_usr_firstname.' '.$db_usr_surname.'\'s profile picture" />';
-$authorLink = $siteroot.'/users/'.$db_usr_username;
+$userAvatar = '<img class="userAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.$db_usr_avatar.'&amp;w=90&amp;h=90&amp;zc=c" alt="'.$db_usr_firstname.' '.$db_usr_surname.'\'s profile picture" />';
+$authorLink = SITEROOT.'/users/'.$db_usr_username;
 echo '<div class="articleHeader"><a href="'.$authorLink.'">' . $userAvatar . '</a><h1>' . stripslashes(html_entity_decode($articleTitle)) . '</h1>';
-echo '<div class="articleInfo">By <a href="'.$authorLink.'">'.$db_usr_firstname.' '.$db_usr_surname.'</a> | <a href="'. $siteroot . '/'.strtolower($dbcat_categoryName).'">'.$dbcat_categoryName.'</a> | '.$cleanDatePosted.'</div>';
+echo '<div class="articleInfo">By <a href="'.$authorLink.'">'.$db_usr_firstname.' '.$db_usr_surname.'</a> | <a href="'. SITEROOT . '/'.strtolower($dbcat_categoryName).'">'.$dbcat_categoryName.'</a> | '.$cleanDatePosted.'</div>';
 echo '</div>';
 ?>
 <div class="articleTabs noPrint">
@@ -64,10 +64,10 @@ echo '</div>';
 <ul> 
 <li class="selected"> Article </li> 
 <?php
-echo '<li><a href="'.$siteroot.'/stream/comments/'.strtolower($dbcat_categoryName).'/'.$permaLink.'"> Comments ('.$commentCount.') </a></li>';
+echo '<li><a href="'.SITEROOT.'/stream/comments/'.strtolower($dbcat_categoryName).'/'.$permaLink.'"> Comments ('.$commentCount.') </a></li>';
 ?>
 <?php if (isset($_SESSION['userID']) && $_SESSION['usr_access_lvl'] <= 2) { ?>
-<li><a href="<?php echo $siteroot ?>/socket/modules/stream/admin_stream_edit.php?ID=<?php echo $articleID; ?>"> Edit </a></li>
+<li><a href="<?php echo SITEROOT ?>/socket/modules/stream/admin_stream_edit.php?ID=<?php echo $articleID; ?>"> Edit </a></li>
 <?php } ?>
 </ul>
 </div>
@@ -75,13 +75,13 @@ echo '<li><a href="'.$siteroot.'/stream/comments/'.strtolower($dbcat_categoryNam
 if (!$articleImageAlt) { $articleImageAlt = urldecode($articleTitle); }
 echo '<div class="articleDetail">';
 if ($articleImage) {
-echo '<img class="firstImage" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$articleImage.'&amp;w=621&amp;h=159" alt="'.$articleImageAlt.'" title="'.urldecode($articleTitle).'" />';
+echo '<img class="firstImage" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.$articleImage.'&amp;w=621&amp;h=159" alt="'.$articleImageAlt.'" title="'.urldecode($articleTitle).'" />';
 }
 echo '<div class="highlight">' . stripslashes($articleSummary) .'</div>';
 echo stripslashes($articleBody);
 
 // Add poll module
-require_once($serverroot.'/modules/poll/widget_article_results.php');
+require_once(SERVERROOT.'/modules/poll/widget_article_results.php');
 
 ?>
 
@@ -96,7 +96,7 @@ require_once($serverroot.'/modules/poll/widget_article_results.php');
 </div>
 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=digitalfusionmag"></script></span>
 <?php if ($devMode != 1) { // Add a google adSense banner
-require_once($serverroot.'/modules/adsense/widget_banner.php');
+require_once(SERVERROOT.'/modules/adsense/widget_banner.php');
 
 }
 } // End add this code ?>
@@ -116,11 +116,11 @@ if ($_SESSION['userID']) { echo $commentForm; }
 	};
 } else {
 	// Insert the header information
-require_once('' . $serverroot . '/style/standard/head.php');
-require_once('' . $serverroot . '/style/standard/head2.php');
-require_once('' . $serverroot . '/style/standard/header.php');
-echo '<div> <h1>Thank you for visiting '.$sc_sitename.'. </h1>  <p> It appears you have accessed this page through invalid means, <a href="'.$siteroot.'">please click here to return to the home page</p></a></div>';
+require_once('' . SERVERROOT . '/assets/style/standard/head.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head2.php');
+require_once('' . SERVERROOT . '/assets/style/standard/header.php');
+echo '<div> <h1>Thank you for visiting '.$sc_sitename.'. </h1>  <p> It appears you have accessed this page through invalid means, <a href="'.SITEROOT.'">please click here to return to the home page</p></a></div>';
 }
 //Main content ends here
-require_once('' . $serverroot . '/style/standard/footer.php');
+require_once('' . SERVERROOT . '/assets/style/standard/footer.php');
 ?>

@@ -1,5 +1,5 @@
 <?php require_once('templates/standard/socket_header.php'); ?>
-          <p class="float_right button"> <a href="<?php echo $siteroot?>/socket/index.php">Discard</a></p><h1> Add Dynamic content </h1>
+          <p class="float_right button"> <a href="<?php echo SITEROOT?>/socket/index.php">Discard</a></p><h1> Add Dynamic content </h1>
           <p>From here you can add content to existing pages.</p>
           <br />
           <?php

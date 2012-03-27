@@ -51,7 +51,7 @@ if ($userVoted != 1) { // Checks the users cookies to find out if they have alre
 	$catdetails = mysql_query($catlookup) or die ('fained to connect: ' .mysql_error());
 	$catdata = mysql_fetch_array($catdetails, MYSQL_BOTH);
 	extract($catdata, EXTR_PREFIX_ALL, "dbcat");
-	echo '<a class="articleLink" href="'.$siteroot.'/blog/'.strtolower($dbcat_categoryName).'/'.$ala_permaLink.'"> View related article </a>';
+	echo '<a class="articleLink" href="'.SITEROOT.'/blog/'.strtolower($dbcat_categoryName).'/'.$ala_permaLink.'"> View related article </a>';
 	} ?>
 <h1> User Poll </h1>
 <div class="box">
@@ -118,7 +118,7 @@ if ($dbp_answer5) { if ($totalVotes == 0) { $result5 = 0; } else { $result5 = ce
 	$catdetails = mysql_query($catlookup) or die ('fained to connect: ' .mysql_error());
 	$catdata = mysql_fetch_array($catdetails, MYSQL_BOTH);
 	extract($catdata, EXTR_PREFIX_ALL, "dbcat");
-	echo '<a class="articleLink" href="'.$siteroot.'/blog/'.strtolower($dbcat_categoryName).'/'.$ala_permaLink.'"> View related article </a>';
+	echo '<a class="articleLink" href="'.SITEROOT.'/blog/'.strtolower($dbcat_categoryName).'/'.$ala_permaLink.'"> View related article </a>';
 	} ?>
 <h1> Poll Results</h1>
 <div class="box">

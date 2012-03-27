@@ -4,7 +4,7 @@
 $current_module = 2;
 
 require_once('../../templates/standard/socket_header.php'); ?>
-                 <p class="float_right button"> <a href="<?php echo $siteroot?>/socket/index.php">Discard</a></p>   <h1> Add Blog Article </h1>
+                 <p class="float_right button"> <a href="<?php echo SITEROOT?>/socket/index.php">Discard</a></p>   <h1> Add Blog Article </h1>
           <p>From here you can add new blog articles to your website</p>
           <?php
 // checks to see if the form has already been submitted
@@ -29,7 +29,7 @@ if ($g == 1) { $GlobalAuthor = 1; } else { $GlobalAuthor = 0; }
 			if($filetype == 'image/jpeg' || $filetype == 'image/jpg' || $filetype == 'image/gif' || $filetype == 'image/png') 
 				{
 			$articleImage = '/articleimages/' . date(dmy) .'_'. $_FILES['articleImage']['name'];
-			$imageLocation = $serverroot .'/articleimages/';
+			$imageLocation = SERVERROOT .'/articleimages/';
 			$imageTempName = $_FILES['articleImage']['tmp_name'];
 			$imageName = date(dmy) .'_'. $_FILES['articleImage']['name'];
 			move_uploaded_file($imageTempName, "$imageLocation/$imageName");
@@ -45,7 +45,7 @@ if ($posted) {
 	?>
 	<!-- javascript send message to menu -->
 <script language="JavaScript">
-      window.location.href = '<?php echo $socketroot ?>/modules/blog/admin_blog.php?message=' + <?php echo $message; ?>;
+      window.location.href = '<?php echo SOCKETROOT ?>/modules/blog/admin_blog.php?message=' + <?php echo $message; ?>;
 </script> <?php
 }
 ?>

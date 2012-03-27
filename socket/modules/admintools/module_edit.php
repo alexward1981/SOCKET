@@ -37,7 +37,7 @@ if ($posted)
 	?>
 	<!-- javascript send message to menu -->
 <script language="JavaScript">
-      window.location.href = '<?php echo $socketroot ?>/modules/admintools/modules.php?message=' + <?php echo $message; ?>;
+      window.location.href = '<?php echo SOCKETROOT ?>/modules/admintools/modules.php?message=' + <?php echo $message; ?>;
 </script>
 
 <?php 

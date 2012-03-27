@@ -34,5 +34,5 @@ mysql_query($query) or die ('Failed because: '.mysql_error());
 if ($query) {
 	$message = '<div class="success"><strong>Facebook Sync Complete</strong><p>Your facebook account has been linked to $sc_sitename Please login. </p></div>';
 	}
-redirect_to("{$siteroot}/modules/users/login.php?message=$message");
+redirect_to("{SITEROOT}/modules/users/login.php?message=$message");
 ?>

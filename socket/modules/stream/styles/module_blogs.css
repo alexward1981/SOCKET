@@ -137,7 +137,7 @@
 	padding: 5px 0px 5px 0px;
 	border-top: 1px #999 dotted;
 	border-bottom: 1px #999 dotted;	
-	background-image:url(http://cache.invasionmedia.co.uk/white_bg_tile_20.png);
+	background-image:url(/assets/cdnfiles/white_bg_tile_20.png);
 	background-repeat:repeat;
 	}
 
@@ -149,7 +149,7 @@
 
 .commentWrapper .commentBox {
 	width: 97%;
-	background-image:url(http://cache.invasionmedia.co.uk/black_bg_tile_40.png);
+	background-image:url(/assets/cdnfiles/black_bg_tile_40.png);
 	background-repeat:repeat;
 	padding: 8px 11px 8px 11px;
 	margin:0px;
@@ -158,7 +158,7 @@
 
 .commentWrapperALT .commentBox {
 	width: 97%;
-	background-image:url(http://cache.invasionmedia.co.uk/black_bg_tile_20.png);
+	background-image:url(/assets/cdnfiles/black_bg_tile_20.png);
 	background-repeat:repeat;
 	padding: 8px 11px 8px 11px;
 	margin:0px;
@@ -218,7 +218,7 @@
 	display:block;
 	color:#000;
 	margin: 0px;
-	background-image:url(http://cache.invasionmedia.co.uk/white_bg_tile_20.png);
+	background-image:url(/assets/cdnfiles/white_bg_tile_20.png);
 	background-repeat:repeat;	
 	padding: 2px 0px 4px 3px;
 }
@@ -229,7 +229,7 @@
 	display:block;
 	color:#000;
 	margin: 0px;
-	background-image:url(http://cache.invasionmedia.co.uk/white_bg_tile_10.png);
+	background-image:url(/assets/cdnfiles/white_bg_tile_10.png);
 	background-repeat:repeat;	
 	padding: 2px 0px 4px 3px;
 }

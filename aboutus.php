@@ -16,16 +16,16 @@ $meta_description = "$meta_desc";
 $title = "$article_title";
 $body = "$article_body";
 };
-require_once('' . $serverroot . '/style/standard/head.php');
-require_once('' . $serverroot . '/style/standard/head2.php');
-require_once('style/standard/header.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head2.php');
+require_once('/assets/style/standard/header.php');
 //Main content starts here ?>
-<?php if (isset($_SESSION['userID']) && $_SESSION['usr_access_lvl'] <= 3) {echo '<span class="socket_action_button"> <a href="'.$siteroot.'/socket/pages_edit.php?ID='.$pageID.'"><img src="' . $siteroot . '/socket/elements/buttons/button_edit.png" width="15" height="15" alt="Edit Page" /></a></span>';}?>
+<?php if (isset($_SESSION['userID']) && $_SESSION['usr_access_lvl'] <= 3) {echo '<span class="socket_action_button"> <a href="'.SITEROOT.'/socket/pages_edit.php?ID='.$pageID.'"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_edit.png" width="15" height="15" alt="Edit Page" /></a></span>';}?>
 <h1><?php echo stripslashes($title); ?></h1>
 <div id="bodytext">
 <?php echo stripslashes($body); ?>
   </div>
 <?php 
 //Main content ends here
-require_once('style/standard/footer.php');
+require_once('/assets/style/standard/footer.php');
 ?>

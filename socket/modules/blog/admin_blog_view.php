@@ -29,7 +29,7 @@ while(list($blogID, $userID, $blogTitle, $blogBody) = mysql_fetch_array($data, M
 ?></p>
 <p><strong><?php echo 'Current Article ID = ' . $blogID; ?></strong></p></div>
 <p><strong>Body Text</strong></p>
-<p><?php echo preg_replace("/<img[^>]+\>/i", "<img src=\"" .$siteroot."/socket/elements/image_placeholder.png\" class=\"image_left\" />", $blogBody) ?></p>
+<p><?php echo preg_replace("/<img[^>]+\>/i", "<img src=\"" .SITEROOT."/socket/assets/images/image_placeholder.png\" class=\"image_left\" />", $blogBody) ?></p>
 
 <?PHP
 };

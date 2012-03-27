@@ -5,7 +5,7 @@ $current_module = 11;
 
 require_once('../../templates/standard/socket_header.php'); 
 ?>
-                    <p class="float_right button"> <a href="<?php echo $siteroot?>/socket/index.php">Discard</a></p><h1> Add New Physical Pages</h1>
+                    <p class="float_right button"> <a href="<?php echo SITEROOT?>/socket/index.php">Discard</a></p><h1> Add New Physical Pages</h1>
           <p>From here you can add new pages to your website. Note: This will not create a navigation option, just the page itself, for more information contact us and we'll help you out.</p>
           <?php
 // checks to see if the form has already been submitted

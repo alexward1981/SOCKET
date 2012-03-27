@@ -18,5 +18,5 @@ mysql_close($conn);
 mysql_close($globalconn);
 ?>
 <script language="JavaScript">
-      window.location.href = '<?php echo $siteroot ?>/modules/users/login.php?loggedout=1';
+      window.location.href = '<?php echo SITEROOT ?>/modules/users/login.php?loggedout=1';
 </script>

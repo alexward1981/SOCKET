@@ -5,6 +5,7 @@ AddType application/octet-stream .avi
 AddType application/octet-stream .mpg
 AddType application/octet-stream .mov
 AddType application/octet-stream .pdf
+AddType application/octet-stream .bmp
 
 # Enable mod_rewrite
 Options +FollowSymlinks
@@ -23,13 +24,13 @@ RewriteCond %{HTTP_HOST} ([a-z-]+\.[a-z]{2,6})$     [NC]
 RewriteRule ^/(.*)$ http://%1/$1 [R=301,L]
 
 #Redirect incorrect URL's to the correct versions
-redirect 301 ^(dfmag.me)$ http://www.digitalfusionmag.com/$
+#redirect 301 ^(dfmag.me)$ http://www.digitalfusionmag.com/$
 
 # Disable hotlinking
 #RewriteCond %{HTTP_REFERER} !^$
 #RewriteCond %{HTTP_REFERER} !^http://(www\.)?digitalfusionmag\.com/ [NC]
 #RewriteCond %{REQUEST_URI} !hotlink\.(gif|png|jpg) [NC]
-#RewriteRule .*\.(gif|jpg|png)$ http://digitalfusionmag.com/elements/hotlink.jpg [NC] 
+#RewriteRule .*\.(gif|jpg|png)$ http://digitalfusionmag.com/assets/images/hotlink.jpg [NC] 
 
 # Rewrite static URL's to appear more friendly
 RewriteRule ^users.php$ /modules/users/users.php [L]

@@ -62,7 +62,7 @@
 }
 
 #poll .box .resultBar {
-	background:url(/modules/poll/elements/poll_results_bg_tile_x.gif) repeat-x;
+	background:url(/modules/poll/assets/images/poll_results_bg_tile_x.gif) repeat-x;
 	display:block;
 	height: 25px;
 	line-height: 25px;
@@ -145,7 +145,7 @@
 }
 
 #articleResults .box .resultBar {
-	background:url(/modules/poll/elements/poll_results_bg_tile_x.gif) repeat-x;
+	background:url(/modules/poll/assets/images/poll_results_bg_tile_x.gif) repeat-x;
 	display:block;
 	height: 25px;
 	line-height: 25px;

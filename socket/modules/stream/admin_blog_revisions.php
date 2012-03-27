@@ -79,30 +79,30 @@ $userdata = mysql_query($userlookup) or die('<h3 style="color:red"> Local retrie
 $userdataArray = mysql_fetch_array($userdata, MYSQL_BOTH);
 extract($userdataArray, EXTR_PREFIX_ALL, "db");
 if ($db_usr_avatar) {
-	echo '<img src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$db_usr_avatar.'&amp;w=25&amp;h=25&amp;zc=c" title="Created by '.$db_usr_firstname.' '.$db_usr_surname.'" alt="'.$db_usr_username.'"/></td>';
+	echo '<img src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.$db_usr_avatar.'&amp;w=25&amp;h=25&amp;zc=c" title="Created by '.$db_usr_firstname.' '.$db_usr_surname.'" alt="'.$db_usr_username.'"/></td>';
 
 } else
 {
-	echo '<img src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src=' . $socketroot . '/modules/users/avatars/no_avatar.jpg&amp;w=20&amp;h=20&amp;zc=c" title="Created by '.$db_usr_firstname.' '.$db_usr_surname.'" alt="'.$db_usr_username.'"/></td>';
+	echo '<img src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src=' . SOCKETROOT . '/modules/users/avatars/no_avatar.jpg&amp;w=20&amp;h=20&amp;zc=c" title="Created by '.$db_usr_firstname.' '.$db_usr_surname.'" alt="'.$db_usr_username.'"/></td>';
 }
 echo '<td>&nbsp;' . html_entity_decode(stripslashes($result['articleTitle'])) . '</td>';
 
 // VIEW ARTICLE IN LIVE SITE
 echo '<td class="buttonCol">';
-echo '<a href="'.$siteroot.'/modules/stream/article.php?article=true&amp;revision='. $result['revisionID'].'"><img src="' . $siteroot . '/socket/elements/buttons/button_open.png"  title="View revision on live site (not visible to the public)" /></a></td>';
+echo '<a href="'.SITEROOT.'/modules/stream/article.php?article=true&amp;revision='. $result['revisionID'].'"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_open.png"  title="View revision on live site (not visible to the public)" /></a></td>';
 
 // EDIT ARTICLES
 echo '<td class="buttonCol2">';
-echo '<a href="javascript:republishContent(\''. $result['revisionID'].'\');"><img src="' . $siteroot . '/socket/elements/buttons/button_republish.png"  title="Make this revision active" /></a></td>';
+echo '<a href="javascript:republishContent(\''. $result['revisionID'].'\');"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_republish.png"  title="Make this revision active" /></a></td>';
 
 // DELETE ARTICLES
 if ($_SESSION['usr_access_lvl'] <= 2) // If user is a site admin then let them delete articles
 	{
 	echo '<td class="buttonCol2">';
-	echo '<a href="javascript:deleteContent(\''. $result['revisionID'].'\');"><img src="' . $siteroot . '/socket/elements/buttons/button_delete.png"  title="Delete Revision" /></a></td>';
+	echo '<a href="javascript:deleteContent(\''. $result['revisionID'].'\');"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_delete.png"  title="Delete Revision" /></a></td>';
 } else { // if they are not then display a greyed out button
 		echo '<td class="deadcol" width="20" align="center">';
-		echo '<img src="' . $siteroot . '/socket/elements/buttons/off_button_delete.png"  alt="Cannot Delete Page" /></td>'; }
+		echo '<img src="' . SITEROOT . '/socket/assets/images/buttons/off_button_delete.png"  alt="Cannot Delete Page" /></td>'; }
 echo '  </tr>';
 };
 	

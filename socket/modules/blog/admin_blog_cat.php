@@ -50,15 +50,15 @@ echo '    <td>&nbsp;&nbsp;' , $result['categoryName'];
 if ($result['isPrivate'] == 1) { echo ' <span style="color: blue;">[ Private ]</span>'; }
 echo'	  </td>';
 echo '    <td width="28" align="center">';
-echo '      <a href="admin_blog_cat_edit.php?ID='. $result['categoryID'].'"><img src="' . $siteroot . '/socket/elements/buttons/button_edit.png" width="32" height="32" alt="Edit Page" /></a></td>';
+echo '      <a href="admin_blog_cat_edit.php?ID='. $result['categoryID'].'"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_edit.png" width="32" height="32" alt="Edit Page" /></a></td>';
 // Admin switch yet to add
 //if ($result["dynamicID"] > $static_pages)
 	//{
 	echo '<td width="28" align="center">';
-	echo '<a href="javascript:deleteContent(\''. $result['categoryID'].'\');"><img src="' . $siteroot . '/socket/elements/buttons/button_delete.png" width="32" height="32" alt="Delete Page" /></a></td>';
+	echo '<a href="javascript:deleteContent(\''. $result['categoryID'].'\');"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_delete.png" width="32" height="32" alt="Delete Page" /></a></td>';
 /*} else { 
 		echo '<td width="28" class="deadcol" align="center">';
-		echo '<img src="' . $siteroot . '/socket/elements/buttons/off_button_delete.png" width="32" height="32" alt="Cannot Delete Category" /></td>'; }*/
+		echo '<img src="' . SITEROOT . '/socket/assets/images/buttons/off_button_delete.png" width="32" height="32" alt="Cannot Delete Category" /></td>'; }*/
 echo '  </tr>';
 		
     		};

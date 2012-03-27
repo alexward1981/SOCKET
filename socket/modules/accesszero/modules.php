@@ -43,10 +43,10 @@ $searchrows = mysql_num_rows($data);
 echo '	<tr>';
 echo '    <td>' . $result["module_name"]. '</td>';
 echo '    <td class="buttons" width="32" align="center">';
-echo '      <a href="module_menus.php?ID='. $result["moduleID"].'"><img src="' . $siteroot . '/socket/elements/buttons/button_view_menus.png" width="32" height="32" alt="Edit Page" /></a></td>';
+echo '      <a href="module_menus.php?ID='. $result["moduleID"].'"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_view_menus.png" width="32" height="32" alt="Edit Page" /></a></td>';
 
 echo '    <td class="buttons" width="32" align="center">';
-echo '      <a href="module_edit.php?ID='. $result["moduleID"].'"><img src="' . $siteroot . '/socket/elements/buttons/button_edit.png" width="32" height="32" alt="Edit Page" /></a></td>';
+echo '      <a href="module_edit.php?ID='. $result["moduleID"].'"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_edit.png" width="32" height="32" alt="Edit Page" /></a></td>';
 echo '  </tr>';
 		
     		};

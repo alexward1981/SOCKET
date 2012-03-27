@@ -63,31 +63,31 @@ extract($getTitleArray, EXTR_PREFIX_ALL, "p");
 	$mceInit = 1;	//Activates TinyMCE
 	$postTimestamp = convert_datetime($p_datePosted);
 	$cleanDatePosted = date( 'l, j M Y', $postTimestamp);
-	$special_crumb = '<a href="'. $siteroot . '/stream/'.strtolower($dbcat_categoryName).'">'.strtolower($dbcat_categoryName).'</a> <span class="divider"> &raquo; </span> <a href="' .$siteroot .'/stream/'.strtolower($dbcat_categoryName).'/'.$p_permaLink.'">'.stripslashes(html_entity_decode($p_articleTitle)).'</a>';
+	$special_crumb = '<a href="'. SITEROOT . '/stream/'.strtolower($dbcat_categoryName).'">'.strtolower($dbcat_categoryName).'</a> <span class="divider"> &raquo; </span> <a href="' .SITEROOT .'/stream/'.strtolower($dbcat_categoryName).'/'.$p_permaLink.'">'.stripslashes(html_entity_decode($p_articleTitle)).'</a>';
 // imports header information
-require_once('' . $serverroot . '/style/standard/head.php');
-require_once('' . $serverroot . '/style/standard/head2.php');
-require_once('' . $serverroot . '/style/standard/header.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head2.php');
+require_once('' . SERVERROOT . '/assets/style/standard/header.php');
 // checks the databases and returns the authors avatar if one exists.
 $userlookup = "SELECT usr_firstname, usr_surname, usr_username, usr_avatar FROM core_users WHERE userID =" . $p_articleAuthor;
 $userdata = mysql_query($userlookup) or die('<h3 style="color:red"> User Retrieval Failed! </h3>' . mysql_error());	
 $userdataArray = mysql_fetch_array($userdata, MYSQL_BOTH);
 extract($userdataArray, EXTR_PREFIX_ALL, "db");
 if ($db_usr_avatar) {
-$userAvatar = '<img class="userAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$db_usr_avatar.'&amp;w=90&amp;h=90&amp;zc=c" alt="'.$db_usr_firstname.' '.$db_usr_surname.'\'s profile picture"/>';
+$userAvatar = '<img class="userAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.$db_usr_avatar.'&amp;w=90&amp;h=90&amp;zc=c" alt="'.$db_usr_firstname.' '.$db_usr_surname.'\'s profile picture"/>';
 } else {
-$userAvatar = '<img class="userAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$serverroot.'/socket/modules/users/avatars/no_avatar.jpg&amp;w=50&amp;h=50&amp;zc=c" alt="'.$cu_usr_username.'\'s profile picture"/>';	
+$userAvatar = '<img class="userAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.SERVERROOT.'/socket/modules/users/avatars/no_avatar.jpg&amp;w=50&amp;h=50&amp;zc=c" alt="'.$cu_usr_username.'\'s profile picture"/>';	
 }
-$authorLink = $siteroot.'/users/'.$db_usr_username;
+$authorLink = SITEROOT.'/users/'.$db_usr_username;
 echo '<div class="articleHeader">' . $userAvatar . '<h1>' . urldecode($p_articleTitle) . '</h1>';
-echo '<div class="articleInfo">By <a href="'.$authorLink.'">'.$db_usr_firstname.' '.$db_usr_surname.'</a> | <a href="'. $siteroot . '/stream/'.strtolower($dbcat_categoryName).'">'.$dbcat_categoryName.'</a> | '.$cleanDatePosted.'</div>';
+echo '<div class="articleInfo">By <a href="'.$authorLink.'">'.$db_usr_firstname.' '.$db_usr_surname.'</a> | <a href="'. SITEROOT . '/stream/'.strtolower($dbcat_categoryName).'">'.$dbcat_categoryName.'</a> | '.$cleanDatePosted.'</div>';
 echo '</div>';
 // Selects all the comments in the database which reply to the article
 $allComments = mysql_query("SELECT commentID, articleID, userID, commentDetail, timeStamp, modRequired FROM module_stream_comments WHERE modRequired = 0 AND articleID =" . $p_articleID . " ORDER BY commentID");
 $fullCommentCount = mysql_num_rows($allComments);
 ?>
 <div class="articleTabs">
-<ul> <li><a href="<?php echo $siteroot ?>/stream/<?php echo strtolower($dbcat_categoryName); ?>/<?php echo $p_permaLink; ?>"> Article </a></li> <li class="Cselected"> Comments (<?php echo $fullCommentCount ?>)</li></ul>
+<ul> <li><a href="<?php echo SITEROOT ?>/stream/<?php echo strtolower($dbcat_categoryName); ?>/<?php echo $p_permaLink; ?>"> Article </a></li> <li class="Cselected"> Comments (<?php echo $fullCommentCount ?>)</li></ul>
 </div>
 <div class="articleComments">
 
@@ -118,14 +118,14 @@ while(list($c_commentID, $c_articleID, $c_userID, $c_commentDetail, $c_timeStamp
 $comRatio = count($likedBy) - count($dislikedBy);	
 $comCount++;
 $commentActions  = '<div class="commentActions">';
-//$commentActions .= '<a href="javascript:likeComment(\''. $c_commentID.'\');"><img src="'.$siteroot.'/modules/stream/elements/btn_like.png" alt="Like comment" title="Like comment" /></a>';
-//$commentActions .= '<a href="javascript:dislikeComment(\''. $c_commentID.'\');"><img src="'.$siteroot.'/modules/stream/elements/btn_dislike.png" alt="Dislike comment" title="Dislike comment" /></a>';
-$commentActions .= '<a href="/stream/comments/'.strtolower($_GET['cat']).'/'.$_GET['article'].'/'.$c_commentID.'"><img src="'.$siteroot.'/modules/stream/elements/btn_reply.png" alt="reply to comment" title="reply to comment" /></a>';
+//$commentActions .= '<a href="javascript:likeComment(\''. $c_commentID.'\');"><img src="'.SITEROOT.'/modules/stream/assets/images/btn_like.png" alt="Like comment" title="Like comment" /></a>';
+//$commentActions .= '<a href="javascript:dislikeComment(\''. $c_commentID.'\');"><img src="'.SITEROOT.'/modules/stream/assets/images/btn_dislike.png" alt="Dislike comment" title="Dislike comment" /></a>';
+$commentActions .= '<a href="/stream/comments/'.strtolower($_GET['cat']).'/'.$_GET['article'].'/'.$c_commentID.'"><img src="'.SITEROOT.'/modules/stream/assets/images/btn_reply.png" alt="reply to comment" title="reply to comment" /></a>';
 $commentActions .= '</div>';
 if ($cu_usr_avatar) {
-$userAvatar = '<img class="userAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$cu_usr_avatar.'&amp;w=50&amp;h=50&amp;zc=c" alt="'.$cu_usr_username.'\'s profile picture"/>';
+$userAvatar = '<img class="userAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.$cu_usr_avatar.'&amp;w=50&amp;h=50&amp;zc=c" alt="'.$cu_usr_username.'\'s profile picture"/>';
 } else {
-$userAvatar = '<img class="userAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$serverroot.'/socket/modules/users/avatars/no_avatar.jpg&amp;w=50&amp;h=50&amp;zc=c" alt="'.$cu_usr_username.'\'s profile picture"/>';	
+$userAvatar = '<img class="userAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.SERVERROOT.'/socket/modules/users/avatars/no_avatar.jpg&amp;w=50&amp;h=50&amp;zc=c" alt="'.$cu_usr_username.'\'s profile picture"/>';	
 }
 if(checkNum($comCount) === TRUE){
   echo '<div class="commentWrapper">';
@@ -137,8 +137,8 @@ echo '<a class="hidden" name="'.$c_commentID.'" id="'.$c_commentID.'">Comment #'
 if ($_SESSION['userID']) {
 echo $commentActions; //Add the comment actions
 }
-echo '<a href="'.$siteroot.'/users/'.$cu_usr_username.'">'.$userAvatar.'</a>';
-echo '<a class="name" href="'.$siteroot.'/users/'.$cu_usr_username.'">'.$cu_usr_username.'</a><br />';
+echo '<a href="'.SITEROOT.'/users/'.$cu_usr_username.'">'.$userAvatar.'</a>';
+echo '<a class="name" href="'.SITEROOT.'/users/'.$cu_usr_username.'">'.$cu_usr_username.'</a><br />';
 $dateStamp = date( 'l, d M Y % H:i', convert_datetime($c_timeStamp));
 echo '<span class="dateStamp">' . str_replace ('%', '<br />', $dateStamp) . '</span>';
 echo '</div>';
@@ -163,14 +163,14 @@ while(list($r_commentID, $r_articleID, $r_userID, $r_commentDetail, $r_timeStamp
 extract($repliesArray, EXTR_PREFIX_ALL, "ru");
 $repCount++;
 $replyActions  = '<div class="commentActions">';
-//$replyActions .= '<a href="javascript:likeComment(\''. $r_commentID.'\');"><img src="'.$siteroot.'/modules/stream/elements/btn_like.png" alt="Like comment" title="Like comment" /></a>';
-//$replyActions .= '<a href="javascript:dislikeComment(\''. $r_commentID.'\');"><img src="'.$siteroot.'/modules/stream/elements/btn_dislike.png" alt="Dislike comment" title="Dislike comment" /></a>';
-$replyActions .= '<a href="/stream/comments/'.strtolower($_GET['cat']).'/'.$_GET['article'].'/'.$c_commentID.'"><img src="'.$siteroot.'/modules/stream/elements/btn_reply.png" alt="reply to comment" title="reply to comment" /></a>';
+//$replyActions .= '<a href="javascript:likeComment(\''. $r_commentID.'\');"><img src="'.SITEROOT.'/modules/stream/assets/images/btn_like.png" alt="Like comment" title="Like comment" /></a>';
+//$replyActions .= '<a href="javascript:dislikeComment(\''. $r_commentID.'\');"><img src="'.SITEROOT.'/modules/stream/assets/images/btn_dislike.png" alt="Dislike comment" title="Dislike comment" /></a>';
+$replyActions .= '<a href="/stream/comments/'.strtolower($_GET['cat']).'/'.$_GET['article'].'/'.$c_commentID.'"><img src="'.SITEROOT.'/modules/stream/assets/images/btn_reply.png" alt="reply to comment" title="reply to comment" /></a>';
 $replyActions .= '</div>';
 if ($ru_usr_avatar) {
-$ruserAvatar = '<img class="userAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$ru_usr_avatar.'&amp;w=50&amp;h=50&amp;zc=c" alt="'.$ru_usr_username.'\'s profile picture"/>';
+$ruserAvatar = '<img class="userAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.$ru_usr_avatar.'&amp;w=50&amp;h=50&amp;zc=c" alt="'.$ru_usr_username.'\'s profile picture"/>';
 } else {
-$ruserAvatar = '<img class="userAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$serverroot.'/socket/modules/users/avatars/no_avatar.jpg&amp;w=50&amp;h=50&amp;zc=c" alt="'.$ru_usr_username.'\'s profile picture"/>';	
+$ruserAvatar = '<img class="userAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.SERVERROOT.'/socket/modules/users/avatars/no_avatar.jpg&amp;w=50&amp;h=50&amp;zc=c" alt="'.$ru_usr_username.'\'s profile picture"/>';	
 }
 echo '<div class="replyTo">';
 if(checkNum($repCount) === TRUE){
@@ -183,8 +183,8 @@ echo '<a class="hidden" name="'.$r_commentID.'" id="'.$r_commentID.'">Comment #'
 if ($_SESSION['userID']) {
 echo $replyActions; //Add the reply actions
 }
-echo '<a href="'.$siteroot.'/users/'.$ru_usr_username.'">'.$ruserAvatar.'</a>';
-echo '<a class="name" href="'.$siteroot.'/users/'.$ru_usr_username.'">'.$ru_usr_username.'</a><br />';
+echo '<a href="'.SITEROOT.'/users/'.$ru_usr_username.'">'.$ruserAvatar.'</a>';
+echo '<a class="name" href="'.SITEROOT.'/users/'.$ru_usr_username.'">'.$ru_usr_username.'</a><br />';
 $dateStamp = date( 'l, d M Y % H:i', convert_datetime($r_timeStamp));
 echo '<span class="dateStamp">' . str_replace ('%', '<br />', $dateStamp) . '</span>';
 echo '</div>';
@@ -207,9 +207,9 @@ if (!$_GET['cid']) {
 if ($_SESSION['userID']) {
 echo $commentForm;
 			  } else {
- echo '<div> <p> You must be logged in to post a comment. <a href="'.$siteroot.'/modules/users/login.php?r='.$_SERVER['SCRIPT_NAME'].'">Click here to login </a></p> </div>';
+ echo '<div> <p> You must be logged in to post a comment. <a href="'.SITEROOT.'/modules/users/login.php?r='.$_SERVER['SCRIPT_NAME'].'">Click here to login </a></p> </div>';
 }
 }
 //Main content ends here
-require_once('' . $serverroot . '/style/standard/footer.php');
+require_once('' . SERVERROOT . '/assets/style/standard/footer.php');
 ?>

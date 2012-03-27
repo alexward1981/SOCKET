@@ -76,11 +76,11 @@ $userdata = mysql_query($userlookup) or die('<h3 style="color:red"> Local retrie
 $userdataArray = mysql_fetch_array($userdata, MYSQL_BOTH);
 extract($userdataArray, EXTR_PREFIX_ALL, "db");
 if ($db_usr_avatar) {
-	echo '<img src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$db_usr_avatar.'&amp;w=25&amp;h=25&amp;zc=c" title="Created by '.$db_usr_firstname.' '.$db_usr_surname.'" alt="'.$db_usr_username.'"/></td>';
+	echo '<img src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.$db_usr_avatar.'&amp;w=25&amp;h=25&amp;zc=c" title="Created by '.$db_usr_firstname.' '.$db_usr_surname.'" alt="'.$db_usr_username.'"/></td>';
 
 } else
 {
-	echo '<img src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src=' . $socketroot . '/modules/users/avatars/no_avatar.jpg&amp;w=20&amp;h=20&amp;zc=c" title="Created by '.$db_usr_firstname.' '.$db_usr_surname.'" alt="'.$db_usr_username.'"/></td>';
+	echo '<img src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src=' . SOCKETROOT . '/modules/users/avatars/no_avatar.jpg&amp;w=20&amp;h=20&amp;zc=c" title="Created by '.$db_usr_firstname.' '.$db_usr_surname.'" alt="'.$db_usr_username.'"/></td>';
 }
 if ($result['pollStatus'] == 1) { $pollstatus = '<span style="color:red"> [Active]</span>'; } else { $pollstatus = ''; }
 echo '<td>&nbsp;' . html_entity_decode(stripslashes($result['question'])) . $pollstatus .'</td>';
@@ -89,25 +89,25 @@ if ($_SESSION['usr_access_lvl'] <= 2) // If user is a site admin then let them a
 	{
 		if ($result['pollStatus'] != 1) {
 	echo '<td class="buttonCol2">';
-	echo '<a href="javascript:activatePoll(\''. $result['pollID'].'\');"><img src="' . $siteroot . '/socket/elements/buttons/button_republish.png"  title="Activate Poll" /></a></td>';
+	echo '<a href="javascript:activatePoll(\''. $result['pollID'].'\');"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_republish.png"  title="Activate Poll" /></a></td>';
 	} else { // if the poll is already active. don't let them do it again
 		echo '<td class="deadCol" width="20" align="center">';
-		echo '<img src="' . $siteroot . '/socket/elements/buttons/off_button_republish.png"  title="Poll already active" /></td>'; }
+		echo '<img src="' . SITEROOT . '/socket/assets/images/buttons/off_button_republish.png"  title="Poll already active" /></td>'; }
 } else { // if they are not then display a greyed out button
 		echo '<td class="deadCol" width="20" align="center">';
-		echo '<img src="' . $siteroot . '/socket/elements/buttons/off_button_republish.png"  title="Insufficient permissions" /></td>'; }
+		echo '<img src="' . SITEROOT . '/socket/assets/images/buttons/off_button_republish.png"  title="Insufficient permissions" /></td>'; }
 // EDIT POLL
 echo '<td class="buttonCol2">';
-echo '<a href="admin_poll_edit.php?ID='. $result['pollID'].'"><img src="' . $siteroot . '/socket/elements/buttons/button_edit.png"  title="Edit Poll" /></a></td>';
+echo '<a href="admin_poll_edit.php?ID='. $result['pollID'].'"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_edit.png"  title="Edit Poll" /></a></td>';
 
 // DELETE POLL
 if ($_SESSION['usr_access_lvl'] <= 2) // If user is a site admin then let them delete polls
 	{
 	echo '<td class="buttonCol2">';
-	echo '<a href="javascript:deleteContent(\''. $result['pollID'].'\');"><img src="' . $siteroot . '/socket/elements/buttons/button_delete.png"  title="Delete Poll" /></a></td>';
+	echo '<a href="javascript:deleteContent(\''. $result['pollID'].'\');"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_delete.png"  title="Delete Poll" /></a></td>';
 } else { // if they are not then display a greyed out button
 		echo '<td class="deadCol" width="20" align="center">';
-		echo '<img src="' . $siteroot . '/socket/elements/buttons/off_button_delete.png"  alt="Cannot Delete Poll" /></td>'; }
+		echo '<img src="' . SITEROOT . '/socket/assets/images/buttons/off_button_delete.png"  alt="Cannot Delete Poll" /></td>'; }
 
 
 echo '  </tr>';

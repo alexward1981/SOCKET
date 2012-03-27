@@ -1,11 +1,5 @@
-<h1> Latest Articles </h1>
 <?php 
-if ($devMode != 1) { // Add a google adSense banner
-require_once($serverroot.'/modules/adsense/widget_banner.php');
-}
-
 // Begin pagination
-// not working
 $blogCounter = mysql_query("SELECT COUNT(p.articleID) AS total_entries FROM module_blog AS p LEFT JOIN module_blog_categories AS c ON c.categoryID = p.articleCat WHERE p.articlePosted =1 AND c.isPrivate != 1") or die(mysql_error()); $row = mysql_fetch_row($blogCounter); $total_entries = $row[0];
 if(isset($_GET['page_number'])) { $page_number = $_GET['page_number']; } else { $page_number = 1; } 
 if ($_SESSION['blog_ppp']) { $posts_per_page = $_SESSION['blog_ppp']; } else if($mcblog_postsPerPage){ $posts_per_page = $mcblog_postsPerPage;} else {$posts_per_page = 10; }
@@ -29,30 +23,43 @@ $userdata = mysql_query($userlookup) or die('<h3 style="color:red"> Local retrie
 $userdataArray = mysql_fetch_array($userdata, MYSQL_BOTH);
 extract($userdataArray, EXTR_PREFIX_ALL, "db");
 $postTimestamp = convert_datetime($datePosted);
-$cleanDatePosted = date( 'l, j M Y', $postTimestamp);
+$cleanDayPosted = date( 'j', $postTimestamp);
+$cleanMonthPosted = date( 'M', $postTimestamp);
+$cleanYearPosted = date( 'y', $postTimestamp);
 
 if ($db_usr_avatar){
-$userAvatar = '<img class="previewuserAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$db_usr_avatar.'&amp;w=90&amp;h=90&amp;zc=c" alt="'.$db_usr_firstname.' '.$db_usr_surname.'\'s profile picture"/>';
+$userAvatar = '<img class="previewuserAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.$db_usr_avatar.'&amp;w=90&amp;h=90&amp;zc=c" alt="'.$db_usr_firstname.' '.$db_usr_surname.'\'s profile picture"/>';
 } else {
-$userAvatar = '<img class="userAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$serverroot.'/socket/modules/users/avatars/no_avatar.jpg&amp;w=90&amp;h=90&amp;zc=c" title="User does not have a profile picture"/>';	
+$userAvatar = '<img class="userAvatar" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.SERVERROOT.'/socket/modules/users/avatars/no_avatar.jpg&amp;w=90&amp;h=90&amp;zc=c" title="User does not have a profile picture"/>';	
 }
 if ($articleImage) {
-	if (!$articleImagePos) { $articleImagePos = 'C'; }
-$articleThumb = '<img class="previewuserAvatar" src="'.$siteroot.'/Scripts/phpThumb/phpThumb.php?src='.$articleImage.'&amp;w=90&amp;h=90&amp;zc='.$articleImagePos.'" title="'.urldecode($articleTitle).'" alt="'.articleImageAlt.'"/>';
+$articleImagePos = 1;
+$articleThumb = '<img class="tn" src="'.SITEROOT.'/assets/scripts/timthumb/timthumb.php?src='.$articleImage.'&amp;w=90&amp;h=90&amp;zc='.$articleImagePos.'" title="'.urldecode($articleTitle).'" alt="'.articleImageAlt.'"/>';
 } else {
 $articleThumb = $userAvatar;
 }
-$authorLink = $siteroot.'/users/'.$db_usr_username;
+$authorLink = SITEROOT.'/users/'.$db_usr_username;
+?>
+	<section>
+		<div class="articleInfo">
+			<div class="dateComments">
+				<span class="d"><?php echo $cleanDayPosted; ?></span>
+				<span class="my"><?php echo $cleanMonthPosted.' '.$cleanYearPosted; ?></span>
+				<div class="comments">
+					<a href="">0</a>
+				</div>
+			</div>
+			<?php echo $articleThumb ?>
+		</div>
+		<div class="articleSummary">
+			<span class="category"><?php echo $dbcat_categoryName; ?></span>
+			<h1><?php echo stripslashes(html_entity_decode($articleTitle)); ?></h1>
+			<?php echo stripslashes($articleSummary) ?>
+			<a class="rm" href="<?php echo SITEROOT.'/blog/'.strtolower($dbcat_categoryName).'/'.$permaLink ?>">Read more</a>
+		</div>
+	</section>
+<?php
 
-if ($anum != $cnum) {
-echo '<div class="fpSeperator">';
-} else {
-echo '<div>';	
-}
-echo '<div class="previewHeader"><a href="'.$siteroot.'/blog/'.strtolower($dbcat_categoryName).'/'.$permaLink.'">' . $articleThumb . '</a><h2><a href="'.$siteroot.'/blog/'.strtolower($dbcat_categoryName).'/'.$permaLink.'">' . stripslashes(html_entity_decode($articleTitle)) . '</a></h2></div>';
-echo '<div class="previewSummary">' . stripslashes($articleSummary).'</div>';
-echo '<p>By <a href="'.$authorLink.'">'.$db_usr_firstname.' '.$db_usr_surname.'</a> | <a href="'.$siteroot.'/blog/'.strtolower($dbcat_categoryName).'">'. $dbcat_categoryName .'</a> | '.$cleanDatePosted.'</p>';
-echo '</div>';
 };
 // Display Pagination
 if ($total_pages != 1) { // Only display pagination if there is more than one page

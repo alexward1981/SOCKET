@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php require_once($_SERVER['DOCUMENT_ROOT'] . '/socket/globals.php'); // If the user is already logged in, bypass the form.
 if (isset($_SESSION['userID'])) {
-	redirect_to("{$socketroot}/index.php");
+	redirect_to("{SOCKETROOT}/index.php");
 }
 
 // Login Script
@@ -38,7 +38,7 @@ if (!empty($_POST['submit']))
 		$logged = mysql_query($logthis) or die($message = '<h3 style="color:red"> Insertion Failed! </h3>' . mysql_error());
 		$usr_check_in = "UPDATE core_users SET usr_logged_in = 1 WHERE userID =" . $_SESSION['userID'];
 		mysql_query($usr_check_in) or die('<h3 class="error"> Update Failed! </h3>' . mysql_error());
-		redirect_to("{$siteroot}/socket/index.php");
+		redirect_to("{SITEROOT}/socket/index.php");
 } else {
 		$message = '<p class="error"> Login Failed </p>';
 		$loggedin = 0;
@@ -57,7 +57,7 @@ if ($loggedin == 0) {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Socket | Website Administration Software</title>
-<link href="<?php echo $socketroot?>/templates/standard/login.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="<?php echo SOCKETROOT?>/templates/standard/login.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body>
 <div id="horizon">
@@ -82,8 +82,8 @@ echo $message;
 <div id="vandc"><p><span class="boo">SOCKET</span> Administrator v<?php echo number_format($socket_version, 2, '.', ''); ?> © 2007-<?php echo date(Y);?> Alexander Ward.</p> 
 </div>
 <div class="returntosite">
-<a href="<?php echo $siteroot ?>/index.php">Return to <?php echo $sc_sitename; ?> 
-<img src="<?php echo $siteroot ?>/iphone-icon.png" width="20" height="20" alt="return to <?php echo $sc_sitename; ?>" title="return to <?php echo $sc_sitename; ?>"/>
+<a href="<?php echo SITEROOT ?>/index.php">Return to <?php echo $sc_sitename; ?> 
+<img src="<?php echo SITEROOT ?>/iphone-icon.png" width="20" height="20" alt="return to <?php echo $sc_sitename; ?>" title="return to <?php echo $sc_sitename; ?>"/>
 </a>
 </div>
 </div>

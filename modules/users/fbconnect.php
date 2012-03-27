@@ -1,7 +1,7 @@
 <?php 
 include_once $_SERVER['DOCUMENT_ROOT'].'/socket/globals.php';
 if(!$fb_user) {
-	redirect_to("{$siteroot}/modules/users/login.php");
+	redirect_to("{SITEROOT}/modules/users/login.php");
 }
 if ($_POST['submit']) {
 	//Validates the input
@@ -58,15 +58,15 @@ if ($_POST['submit']) {
 						unset($_SESSION['fb_connect_error']);							
 						//OK we linked up their account now log them in. 
 						$_SESSION['userID']= $u_userID;    	
-						redirect_to("{$siteroot}/index.php");
+						redirect_to("{SITEROOT}/index.php");
 					}
 				}
 			} // end if no errors
 } // end if submit
 // imports header information
-require_once('' . $serverroot . '/style/standard/head.php');
-require_once('' . $serverroot . '/style/standard/head2.php');
-require_once('' . $serverroot . '/style/standard/header.php'); ?>
+require_once('' . SERVERROOT . '/assets/style/standard/head.php');
+require_once('' . SERVERROOT . '/assets/style/standard/head2.php');
+require_once('' . SERVERROOT . '/assets/style/standard/header.php'); ?>
 <h1> Next step... </h1>
 <p>If you already have an account with <?php echo $sc_sitename; ?> you can link to it using the form below. </p> 
 <p>Not registered with us yet? Click the button below to automatically generate and account using your facebook details<br />
@@ -102,4 +102,4 @@ if($_SESSION['fb_connect_error']!=null) {
   <input class="box" name="usr_password" type="password"/>
   <input class="button" name="submit" type="submit" value="Login" />
 </form>
-<?php require_once('' . $serverroot . '/style/standard/footer.php'); ?>
+<?php require_once('' . SERVERROOT . '/assets/style/standard/footer.php'); ?>

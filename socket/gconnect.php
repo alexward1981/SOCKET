@@ -13,7 +13,7 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
 <meta content="noindex, nofollow" name="robots"/>
 <title>Socket | Website Administration Software</title>';
 echo '<link href="http://'.$_SERVER['SERVER_NAME'].'/socket/templates/standard/socket.css" rel="stylesheet" type="text/css" media="screen" />
-<link rel="shortcut icon" href="'.$socketroot.'/favicon.ico" />';
+<link rel="shortcut icon" href="'.SOCKETROOT.'/favicon.ico" />';
 echo' </head><body id="errorpage"><div id="horizon"';
 echo '<div class="error_box"><strong>Cannot load site</strong> <p>SOCKET is experiencing temporary connection difficulties, please try again later</p></div></div>'; 
 require_once($_SERVER['DOCUMENT_ROOT'].'/socket/templates/standard/socket_footer.php'); 

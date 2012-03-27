@@ -98,8 +98,8 @@ while(list($commentID, $articleID, $db_userID, $commentDetail, $timeStamp, $modR
 	//end Fetch user script
 ?>
 	<td> <strong>Comment By: </strong> <?php echo $postedby ?> <strong>at:</strong> <?php echo $timeStamp ?></td>
-        <td width="16"><a href="javascript:declineContent('<?php echo $commentID ?>');"><img src="<?php echo $siteroot ?>/socket/elements/buttons/comments/comment_no.png" width="16" height="16" alt="Decline Comment" title="Decline Comment" /></a></td>
-    <td width="16"><a href="javascript:deleteContent('<?php echo $commentID ?>');"><img src="<?php echo $siteroot ?>/socket/elements/buttons/comments/comment_delete.png" width="16" height="16" alt="Delete Comment" title="Delete Comment" /></a></td>
+        <td width="16"><a href="javascript:declineContent('<?php echo $commentID ?>');"><img src="<?php echo SITEROOT ?>/socket/assets/images/buttons/comments/comment_no.png" width="16" height="16" alt="Decline Comment" title="Decline Comment" /></a></td>
+    <td width="16"><a href="javascript:deleteContent('<?php echo $commentID ?>');"><img src="<?php echo SITEROOT ?>/socket/assets/images/buttons/comments/comment_delete.png" width="16" height="16" alt="Delete Comment" title="Delete Comment" /></a></td>
     
   </tr>
   <tr>
@@ -137,9 +137,9 @@ while(list($commentID, $articleID, $db_userID, $commentDetail, $timeStamp, $modR
 	//end Fetch user script
 ?>
 	<td> <strong>Comment By: </strong> <?php echo $postedby ?> <strong>at:</strong> <?php echo $timeStamp ?></td>
-    <td width="16"><a href="javascript:approveContent('<?php echo $commentID ?>');"><img src="<?php echo $siteroot ?>/socket/elements/buttons/comments/comment_yes.png" width="16" height="16" alt="Approve Comment" title="Approve Comment" /></a></td>
-            <td width="16"><a href="javascript:declineContent('<?php echo $commentID ?>');"><img src="<?php echo $siteroot ?>/socket/elements/buttons/comments/comment_no.png" width="16" height="16" alt="Decline Comment" title="Decline Comment" /></a></td>
-  <td width="16"><a href="javascript:deleteContent('<?php echo $commentID ?>');"><img src="<?php echo $siteroot ?>/socket/elements/buttons/comments/comment_delete.png" width="16" height="16" alt="Delete Comment" title="Delete Comment" /></a></td>
+    <td width="16"><a href="javascript:approveContent('<?php echo $commentID ?>');"><img src="<?php echo SITEROOT ?>/socket/assets/images/buttons/comments/comment_yes.png" width="16" height="16" alt="Approve Comment" title="Approve Comment" /></a></td>
+            <td width="16"><a href="javascript:declineContent('<?php echo $commentID ?>');"><img src="<?php echo SITEROOT ?>/socket/assets/images/buttons/comments/comment_no.png" width="16" height="16" alt="Decline Comment" title="Decline Comment" /></a></td>
+  <td width="16"><a href="javascript:deleteContent('<?php echo $commentID ?>');"><img src="<?php echo SITEROOT ?>/socket/assets/images/buttons/comments/comment_delete.png" width="16" height="16" alt="Delete Comment" title="Delete Comment" /></a></td>
     
   </tr>
   <tr>
@@ -178,8 +178,8 @@ while(list($commentID, $articleID, $db_userID, $commentDetail, $timeStamp, $modR
 	//end Fetch user script
 ?>
 	<td> <strong>Comment By: </strong> <?php echo $postedby ?> <strong>at:</strong> <?php echo $timeStamp ?></td>
-    <td width="16"><a href="javascript:approveContent('<?php echo $commentID ?>');"><img src="<?php echo $siteroot ?>/socket/elements/buttons/comments/comment_yes.png" width="16" height="16" alt="Approve Comment" title="Approve Comment" /></a></td>
-  <td width="16"><a href="javascript:deleteContent('<?php echo $commentID ?>');"><img src="<?php echo $siteroot ?>/socket/elements/buttons/comments/comment_delete.png" width="16" height="16" alt="Delete Comment" title="Delete Comment" /></a></td>
+    <td width="16"><a href="javascript:approveContent('<?php echo $commentID ?>');"><img src="<?php echo SITEROOT ?>/socket/assets/images/buttons/comments/comment_yes.png" width="16" height="16" alt="Approve Comment" title="Approve Comment" /></a></td>
+  <td width="16"><a href="javascript:deleteContent('<?php echo $commentID ?>');"><img src="<?php echo SITEROOT ?>/socket/assets/images/buttons/comments/comment_delete.png" width="16" height="16" alt="Delete Comment" title="Delete Comment" /></a></td>
     
   </tr>
   <tr>

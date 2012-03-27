@@ -4,7 +4,7 @@
 $current_module = 2;
 
 require_once('../../templates/standard/socket_header.php'); ?>
-                 <p class="float_right button"> <a href="<?php echo $siteroot?>/socket/index.php">Discard</a></p>   <h1> Add Category </h1>
+                 <p class="float_right button"> <a href="<?php echo SITEROOT?>/socket/index.php">Discard</a></p>   <h1> Add Category </h1>
           <?php
 // checks to see if the form has already been submitted
 if (!empty($_POST['submit'])) {

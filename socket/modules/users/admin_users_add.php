@@ -34,7 +34,7 @@ if (!empty($_FILES['usr_avatar']))
 			$filetype = $_FILES['usr_avatar']['type'];
 			if($filetype == 'image/jpeg' || $filetype == 'image/jpg' || $filetype == 'image/gif' || $filetype == 'image/png') 
 				{
-			$db_usr_avatar= $serverroot .'/socket/modules/users/avatars/' . date(U) . $_FILES['usr_avatar']['name'];
+			$db_usr_avatar= SERVERROOT .'/socket/modules/users/avatars/' . date(U) . $_FILES['usr_avatar']['name'];
 			move_uploaded_file($_FILES['usr_avatar']['tmp_name'], $db_usr_avatar);
 				}
 			}

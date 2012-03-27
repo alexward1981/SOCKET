@@ -46,17 +46,17 @@ $searchrows = mysql_num_rows($data);
 echo '	<tr>';
 echo '    <td>' . $result["pageName"]. '</td>';
 echo '    <td width="28"  align="center">';
-echo '    <a href="dynamic_view.php?ID='. $result["dynamicID"].'"><img src="' . $siteroot . '/socket/elements/buttons/button_open.png" width="28" height="28" alt="Open Page" /></a></td>';
+echo '    <a href="dynamic_view.php?ID='. $result["dynamicID"].'"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_open.png" width="28" height="28" alt="Open Page" /></a></td>';
 echo '    <td width="28" align="center">';
-echo '      <a href="dynamic_edit.php?ID='. $result["dynamicID"].'"><img src="' . $siteroot . '/socket/elements/buttons/button_edit.png" width="28" height="28" alt="Edit Page" /></a></td>';
+echo '      <a href="dynamic_edit.php?ID='. $result["dynamicID"].'"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_edit.png" width="28" height="28" alt="Edit Page" /></a></td>';
 // Don't delete physical page content
 if ($_SESSION['usr_access_lvl'] < 3)
 	{
 	echo '<td width="28" align="center">';
-	echo '<a href="javascript:deleteContent(\''. $result["dynamicID"].'\');"><img src="' . $siteroot . '/socket/elements/buttons/button_delete.png" width="28" height="28" alt="Delete Page" /></a></td>';
+	echo '<a href="javascript:deleteContent(\''. $result["dynamicID"].'\');"><img src="' . SITEROOT . '/socket/assets/images/buttons/button_delete.png" width="28" height="28" alt="Delete Page" /></a></td>';
 } else { 
 		echo '<td width="28" class="deadcol" align="center">';
-		echo '<img src="' . $siteroot . '/socket/elements/buttons/off_button_delete.png" width="28" height="28" alt="Cannot Delete Page" /></td>'; }
+		echo '<img src="' . SITEROOT . '/socket/assets/images/buttons/off_button_delete.png" width="28" height="28" alt="Cannot Delete Page" /></td>'; }
 echo '  </tr>';
 		
     		};

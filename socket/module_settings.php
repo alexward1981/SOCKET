@@ -9,7 +9,7 @@
 // IMPORTANT: Do not include any modules that have not been installed. This will cause the site to break.
 
 // Blog Module
-require_once($serverroot.'/socket/modules/blog/module_config.php');
+require_once(SERVERROOT.'/socket/modules/blog/module_config.php');
 
 
 

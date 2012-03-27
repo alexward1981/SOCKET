@@ -28,11 +28,11 @@ while(list($fileID, $userID, $fileTitle, $fileDescription, $fileURL) = mysql_fet
 ?>
 
 </p>
-<div><img class="margin5px" src="<?php echo $siteroot ?>/Scripts/phpThumb/phpThumb.php?src=<?php echo $serverroot ?>/socket/core-modules/media/<?php echo $fileURL ?>&amp;w=550" alt="<?php $fileTitle?>" />
+<div><img class="margin5px" src="<?php echo SITEROOT ?>/assets/scripts/timthumb/timthumb.php?src=<?php echo SERVERROOT ?>/socket/core-modules/media/<?php echo $fileURL ?>&amp;w=550" alt="<?php $fileTitle?>" />
 <p><?php echo $fileDescription ?>
 <p class="bold">
 <label for="url"> Copy url (Note: If you are using firefox you will have to copy the text manually)</label>
-<input class="inline" id="url" name="url" type="text" value="<?php echo $siteroot .'/socket/core-modules/media/'. $fileURL ?>" size="60" /><input name="copy" onClick="ClipBoard();" type="button" value="Copy to Clipboard" class="inline" />
+<input class="inline" id="url" name="url" type="text" value="<?php echo SITEROOT .'/socket/core-modules/media/'. $fileURL ?>" size="60" /><input name="copy" onClick="ClipBoard();" type="button" value="Copy to Clipboard" class="inline" />
 </p>
 </div>
 
