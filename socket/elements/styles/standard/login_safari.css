@@ -1,0 +1,165 @@
+@charset "utf-8";
+/* CSS Document */
+/**************************************************************/
+/*         The following CSS is for the login page            /*
+/**************************************************************/
+
+body {
+	background-image:url(/socket/assets/images/login/login_bg.jpg);
+	background-repeat:repeat-x;
+	background-color: #e1e1e1;
+	font-family: Calibri, Arial, Helvetica, sans-serif
+}
+
+.boo { color:#bb0000; text-decoration:none; }
+.error { color: #C00; }
+.success { color: #060; }
+
+#horizon {
+	position: absolute;
+	top:50%;
+	width: 99%;
+	height: 1px;
+	overflow:visible;
+}
+
+#login_box {
+	position:absolute;
+	top: -215px;
+	left: 50%;
+	width: 718px;
+	height: 392px;
+	margin-left: -359px;
+}
+
+#login_box h1 {
+	position:absolute;
+	top: 50px;
+	right: 35px;
+	font-size:23px;
+}
+
+#login_box h2 {
+	position:absolute;
+	top: 85px;
+	right: 300px;
+	font-size:18px;
+}
+
+#login_box .un {
+	position:absolute;
+	top: 132px;
+	right: 321px;
+	font-weight:bolder;
+	text-shadow: 1px 1px 1px #999;
+}
+
+#login_box .pw {
+	position:absolute;
+	top: 178px;
+	right: 323px;
+	font-weight:bolder;
+	text-shadow: 1px 1px 1px #999;
+}
+
+#usr_username {
+	position:absolute;
+	top: 125px;
+	right: 24px;
+	width: 276px;
+	height: 30px;
+	line-height: 30px;	
+	border: 1px;
+}
+
+#usr_password {
+	position:absolute;
+	top: 172px;
+	right: 24px;
+	width: 276px;
+	height: 30px;
+	line-height: 30px;	
+	border: 1px;
+}
+
+#submit {
+	position:absolute;
+	top: 214px;
+	right: 24px;
+	height: 25px;
+	font-weight:bold;
+	padding: 2px;
+	padding-top: -2px;
+	color:#FFF;
+	border: 1px solid #000;
+	background-image:url(/socket/assets/images/login/login_btn_bg_tile_x.jpg);
+	background-repeat:repeat-x;
+	-webkit-box-shadow: 1px 2px 5px #999;
+	-moz-box-shadow: 1px 2px 5px #999;
+}
+
+#submit:hover {
+	position:absolute;
+	top: 214px;
+	right: 24px;
+	height: 25px;
+	font-weight:bold;
+	padding: 2px;
+	padding-top: -2px;
+	color:#FFF;
+	border: 1px solid #000;
+	background-image:url(/socket/assets/images/login/login_btn_bg_tile_x-hover.jpg);
+	background-repeat:repeat-x;
+}
+	
+#status {
+	position:absolute;
+	top: 203px;
+	right: 200px;
+	height: 15px;
+	width: 200px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+#lostpw {
+	width: 378px;
+	position:absolute;
+	right: 22px;
+	top: 235px;
+	font-size:14px;
+}
+
+#vandc {
+	position:absolute;
+	right: 15px;
+	bottom: 18px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+#vandc p {
+	margin: 0px;
+	padding: 0px;
+}
+
+.returntosite {
+	position:absolute;
+	right: 10px;
+	bottom: -20px;
+	height: 25px;
+
+}
+
+.returntosite a {
+	text-decoration:none;
+	color:#000;
+	}
+	
+.returntosite a:hover {
+	color:#bb0000;
+	}
+.returntosite img {
+	vertical-align:middle;
+	border: 0px;
+}
